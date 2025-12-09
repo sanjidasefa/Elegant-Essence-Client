@@ -7,8 +7,8 @@ const Footer = () => {
       <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
   <nav>
     <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Branding</a>
-    <a className="link link-hover">Design</a>
+    <a className="link link-hover">Birthday</a>
+    <a className="link link-hover">Weddiing</a>
     <a className="link link-hover">Marketing</a>
     <a className="link link-hover">Advertisement</a>
   </nav>
@@ -16,7 +16,7 @@ const Footer = () => {
     <h6 className="footer-title">Company</h6>
     <a className="link link-hover">About us</a>
     <a className="link link-hover">Contact</a>
-    <a className="link link-hover">Jobs</a>
+    <a className="link link-hover">Coverage Map</a>
     <a className="link link-hover">Press kit</a>
   </nav>
   <nav>
@@ -67,6 +67,7 @@ const Footer = () => {
       </a>
     </div>
   </nav>
+   <p className='text-center text-sm mt-10'>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>
 </footer>
     </div>
   );
