@@ -10,6 +10,7 @@ import DashBoard from '../Layouts/DashBoard';
 import MyProfile from '../Component/Profile/MyProfile';
 import Service from '../Component/service/Service';
 import AddServices from '../Component/dashBoard/decorator/AddServices';
+import Map from '../Component/map/Map';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,12 @@ const router = createBrowserRouter([
       {
         path : '/Service',
         element: <Service></Service>
-      }
+      },
+       {
+       path : '/Covarage-Area-Map',
+       element: <Map></Map> ,
+       loader : () => fetch('warehouses.json').then(res=> res.json())
+      },
     ]
   },
    {

@@ -2,6 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router";
 import { TfiAlignLeft } from "react-icons/tfi";
 import Logo from "../Component/Extra/Logo";
+import { GrServicePlay } from "react-icons/gr";
 
 const DashBoard = () => {
   return (
@@ -9,18 +10,18 @@ const DashBoard = () => {
       <div className="drawer lg:drawer-open">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content">
-          <nav className="navbar w-full bg-base-300 md:p-5">
+          <nav className="navbar w-full bg-white md:p-5 shadow-2xl">
             <label
               htmlFor="my-drawer-4"
               aria-label="open sidebar"
-              className="btn btn-square btn-ghost"
+              className="btn btn-square btn-ghost text-cyan-700"
             >
               <TfiAlignLeft />
             </label>
             <Logo></Logo>
           </nav>
 
-          <div className="p-4">
+          <div className="bg-cyan-50 p-10">
             <Outlet></Outlet>
           </div>
         </div>
@@ -54,7 +55,7 @@ const DashBoard = () => {
               </li>
               <li>
                 <Link to="Add-Services" className="font-semibold" data-tip="Services">
-                <span className="">Add-Services</span>
+                <span className="flex gap-2"><GrServicePlay />Add-Services</span>
                 </Link>
               </li>
             </ul>

@@ -1,0 +1,693 @@
+[
+  {
+    "region": "Dhaka",
+    "district": "Dhaka",
+    "city": "Dhaka",
+    "zones": ["Uttara", "Dhanmondi", "Mirpur", "Mohammadpur"],
+    "status": "active",
+    "chart": "https://example.com/dhaka-chart.png",
+    "lag": 90.4125,
+    "lat": 23.8103
+  },
+  {
+    "region": "Dhaka",
+    "district": "Faridpur",
+    "city": "Faridpur",
+    "zones": ["Goalanda", "Boalmari", "Bhanga"],
+    "status": "active",
+    "chart": "https://example.com/faridpur-chart.png",
+    "lag": 89.8333,
+    "lat": 23.6
+  },
+  {
+    "region": "Dhaka",
+    "district": "Gazipur",
+    "city": "Gazipur",
+    "zones": ["Tongi", "Kaliakair", "Sreepur"],
+    "status": "active",
+    "chart": "https://example.com/gazipur-chart.png",
+    "lag": 90.4203,
+    "lat": 23.9999
+  },
+  {
+    "region": "Dhaka",
+    "district": "Gopalganj",
+    "city": "Gopalganj",
+    "zones": ["Tungipara", "Kotalipara", "Kashiani"],
+    "status": "active",
+    "chart": "https://example.com/gopalganj-chart.png",
+    "lag": 89.8266,
+    "lat": 23.0052
+  },
+  {
+    "region": "Dhaka",
+    "district": "Kishoreganj",
+    "city": "Kishoreganj",
+    "zones": ["Bajitpur", "Kuliarchar", "Pakundia"],
+    "status": "active",
+    "chart": "https://example.com/kishoreganj-chart.png",
+    "lag": 90.7829,
+    "lat": 24.426
+  },
+  {
+    "region": "Dhaka",
+    "district": "Madaripur",
+    "city": "Madaripur",
+    "zones": ["Rajoir", "Kalkini", "Shibchar"],
+    "status": "active",
+    "chart": "https://example.com/madaripur-chart.png",
+    "lag": 90.2,
+    "lat": 23.17
+  },
+  {
+    "region": "Dhaka",
+    "district": "Manikganj",
+    "city": "Manikganj",
+    "zones": ["Saturia", "Shivalaya", "Ghior"],
+    "status": "active",
+    "chart": "https://example.com/manikganj-chart.png",
+    "lag": 89.9767,
+    "lat": 23.8617
+  },
+  {
+    "region": "Dhaka",
+    "district": "Munshiganj",
+    "city": "Munshiganj",
+    "zones": ["Sreenagar", "Lohajang", "Sirajdikhan"],
+    "status": "active",
+    "chart": "https://example.com/munshiganj-chart.png",
+    "lag": 90.5305,
+    "lat": 23.55
+  },
+  {
+    "region": "Dhaka",
+    "district": "Narayanganj",
+    "city": "Narayanganj",
+    "zones": ["Fatullah", "Siddhirganj", "Rupganj"],
+    "status": "active",
+    "chart": "https://example.com/narayanganj-chart.png",
+    "lag": 90.5,
+    "lat": 23.62
+  },
+  {
+    "region": "Dhaka",
+    "district": "Narsingdi",
+    "city": "Narsingdi",
+    "zones": ["Palash", "Belabo", "Raipura"],
+    "status": "active",
+    "chart": "https://example.com/narsingdi-chart.png",
+    "lag": 90.7156,
+    "lat": 23.9226
+  },
+  {
+    "region": "Dhaka",
+    "district": "Rajbari",
+    "city": "Rajbari",
+    "zones": ["Pangsha", "Kalukhali", "Baliakandi"],
+    "status": "active",
+    "chart": "https://example.com/rajbari-chart.png",
+    "lag": 89.65,
+    "lat": 23.7576
+  },
+  {
+    "region": "Dhaka",
+    "district": "Shariatpur",
+    "city": "Shariatpur",
+    "zones": ["Zajira", "Naria", "Gosairhat"],
+    "status": "active",
+    "chart": "https://example.com/shariatpur-chart.png",
+    "lag": 90.4308,
+    "lat": 23.22
+  },
+  {
+    "region": "Dhaka",
+    "district": "Tangail",
+    "city": "Tangail",
+    "zones": ["Delduar", "Ghatail", "Kalihati"],
+    "status": "active",
+    "chart": "https://example.com/tangail-chart.png",
+    "lag": 89.92,
+    "lat": 24.25
+  },
+  {
+    "region": "Chattogram",
+    "district": "Chattogram",
+    "city": "Chattogram",
+    "zones": [
+      "Pahartali",
+      "Kotwali",
+      "Halishahar",
+      "Panchlaish",
+      "Agrabad",
+      "Chandgaon"
+    ],
+    "status": "active",
+    "chart": "https://example.com/chattogram-chart.png",
+    "lag": 91.8123,
+    "lat": 22.3569
+  },
+  {
+    "region": "Chattogram",
+    "district": "Cox's Bazar",
+    "city": "Cox's Bazar",
+    "zones": ["Teknaf", "Ukhia", "Chakaria", "Ramu"],
+    "status": "active",
+    "chart": "https://example.com/coxbazar-chart.png",
+    "lag": 92.0165,
+    "lat": 21.4272
+  },
+  {
+    "region": "Chattogram",
+    "district": "Cumilla",
+    "city": "Cumilla",
+    "zones": ["Laksam", "Debidwar", "Chandina", "Muradnagar"],
+    "status": "active",
+    "chart": "https://example.com/cumilla-chart.png",
+    "lag": 91.1809,
+    "lat": 23.4573
+  },
+  {
+    "region": "Chattogram",
+    "district": "Brahmanbaria",
+    "city": "Brahmanbaria",
+    "zones": ["Nabinagar", "Ashuganj", "Sarail"],
+    "status": "active",
+    "chart": "https://example.com/brahmanbaria-chart.png",
+    "lag": 91.1116,
+    "lat": 23.9571
+  },
+  {
+    "region": "Chattogram",
+    "district": "Chandpur",
+    "city": "Chandpur",
+    "zones": ["Haimchar", "Matlab", "Shahrasti"],
+    "status": "active",
+    "chart": "https://example.com/chandpur-chart.png",
+    "lag": 90.85,
+    "lat": 23.2333
+  },
+  {
+    "region": "Chattogram",
+    "district": "Feni",
+    "city": "Feni",
+    "zones": ["Parshuram", "Daganbhuiyan", "Chhagalnaiya"],
+    "status": "active",
+    "chart": "https://example.com/feni-chart.png",
+    "lag": 91.4,
+    "lat": 23.0167
+  },
+  {
+    "region": "Chattogram",
+    "district": "Khagrachari",
+    "city": "Khagrachari",
+    "zones": ["Ramgarh", "Mahalchari", "Dighinala"],
+    "status": "active",
+    "chart": "https://example.com/khagrachari-chart.png",
+    "lag": 91.9667,
+    "lat": 23.1
+  },
+  {
+    "region": "Chattogram",
+    "district": "Lakshmipur",
+    "city": "Lakshmipur",
+    "zones": ["Raipur", "Ramganj", "Kamalnagar"],
+    "status": "active",
+    "chart": "https://example.com/lakshmipur-chart.png",
+    "lag": 90.8415,
+    "lat": 22.9444
+  },
+  {
+    "region": "Chattogram",
+    "district": "Noakhali",
+    "city": "Noakhali",
+    "zones": ["Begumganj", "Senbagh", "Chatkhil"],
+    "status": "active",
+    "chart": "https://example.com/noakhali-chart.png",
+    "lag": 91.0995,
+    "lat": 22.8245
+  },
+  {
+    "region": "Chattogram",
+    "district": "Rangamati",
+    "city": "Rangamati",
+    "zones": ["Baghaichhari", "Kaptai", "Juraichhari"],
+    "status": "active",
+    "chart": "https://example.com/rangamati-chart.png",
+    "lag": 92.2,
+    "lat": 22.65
+  },
+  {
+    "region": "Sylhet",
+    "district": "Sylhet",
+    "city": "Sylhet",
+    "zones": [
+      "Zindabazar",
+      "Ambarkhana",
+      "Dargah Gate",
+      "South Surma",
+      "Subid Bazar",
+      "Tilagor"
+    ],
+    "status": "active",
+    "chart": "https://example.com/sylhet-chart.png",
+    "lag": 91.8662,
+    "lat": 24.8949
+  },
+  {
+    "region": "Sylhet",
+    "district": "Moulvibazar",
+    "city": "Moulvibazar",
+    "zones": ["Sreemangal", "Kamalganj", "Kulaura", "Barlekha"],
+    "status": "active",
+    "chart": "https://example.com/moulvibazar-chart.png",
+    "lag": 91.7832,
+    "lat": 24.4826
+  },
+  {
+    "region": "Sylhet",
+    "district": "Habiganj",
+    "city": "Habiganj",
+    "zones": ["Shaistaganj", "Madhabpur", "Chunarughat", "Nabiganj"],
+    "status": "active",
+    "chart": "https://example.com/habiganj-chart.png",
+    "lag": 91.4026,
+    "lat": 24.3745
+  },
+  {
+    "region": "Sylhet",
+    "district": "Sunamganj",
+    "city": "Sunamganj",
+    "zones": ["Jagannathpur", "Chhatak", "Tahirpur", "Dowarabazar"],
+    "status": "active",
+    "chart": "https://example.com/sunamganj-chart.png",
+    "lag": 91.395,
+    "lat": 25.0658
+  },
+  {
+    "region": "Rangpur",
+    "district": "Rangpur",
+    "city": "Rangpur",
+    "zones": [
+      "Jahaj Company",
+      "Pairaband",
+      "Mahiganj",
+      "Satmatha",
+      "Lalbagh"
+    ],
+    "status": "active",
+    "chart": "https://example.com/rangpur-chart.png",
+    "lag": 89.2752,
+    "lat": 25.746
+  },
+  {
+    "region": "Rangpur",
+    "district": "Dinajpur",
+    "city": "Dinajpur",
+    "zones": ["Birampur", "Fulbari", "Parbatipur", "Nawabganj"],
+    "status": "active",
+    "chart": "https://example.com/dinajpur-chart.png",
+    "lag": 88.6414,
+    "lat": 25.6275
+  },
+  {
+    "region": "Rangpur",
+    "district": "Thakurgaon",
+    "city": "Thakurgaon",
+    "zones": ["Pirganj", "Ranisankail", "Baliadangi"],
+    "status": "active",
+    "chart": "https://example.com/thakurgaon-chart.png",
+    "lag": 88.466,
+    "lat": 26.0333
+  },
+  {
+    "region": "Rangpur",
+    "district": "Panchagarh",
+    "city": "Panchagarh",
+    "zones": ["Tetulia", "Boda", "Atwari"],
+    "status": "active",
+    "chart": "https://example.com/panchagarh-chart.png",
+    "lag": 88.5658,
+    "lat": 26.3411
+  },
+  {
+    "region": "Rangpur",
+    "district": "Nilphamari",
+    "city": "Nilphamari",
+    "zones": ["Saidpur", "Domar", "Jaldhaka"],
+    "status": "active",
+    "chart": "https://example.com/nilphamari-chart.png",
+    "lag": 88.856,
+    "lat": 25.931
+  },
+  {
+    "region": "Rangpur",
+    "district": "Lalmonirhat",
+    "city": "Lalmonirhat",
+    "zones": ["Hatibandha", "Patgram", "Aditmari"],
+    "status": "active",
+    "chart": "https://example.com/lalmonirhat-chart.png",
+    "lag": 89.1662,
+    "lat": 25.9167
+  },
+  {
+    "region": "Rangpur",
+    "district": "Kurigram",
+    "city": "Kurigram",
+    "zones": ["Nageshwari", "Bhurungamari", "Chilmari", "Ulipur"],
+    "status": "active",
+    "chart": "https://example.com/kurigram-chart.png",
+    "lag": 89.65,
+    "lat": 25.8054
+  },
+  {
+    "region": "Rangpur",
+    "district": "Gaibandha",
+    "city": "Gaibandha",
+    "zones": ["Gobindaganj", "Sundarganj", "Palashbari", "Phulchhari"],
+    "status": "active",
+    "chart": "https://example.com/gaibandha-chart.png",
+    "lag": 89.5418,
+    "lat": 25.3288
+  },
+  {
+    "region": "Khulna",
+    "district": "Khulna",
+    "city": "Khulna",
+    "zones": [
+      "Sonadanga",
+      "Khalishpur",
+      "Daulatpur",
+      "Shib Bari",
+      "Boyra"
+    ],
+    "status": "active",
+    "chart": "https://example.com/khulna-chart.png",
+    "lag": 89.5672,
+    "lat": 22.8456
+  },
+  {
+    "region": "Khulna",
+    "district": "Jessore",
+    "city": "Jessore",
+    "zones": ["Chowgachha", "Bagharpara", "Manirampur", "Abhaynagar"],
+    "status": "active",
+    "chart": "https://example.com/jessore-chart.png",
+    "lag": 89.2167,
+    "lat": 23.17
+  },
+  {
+    "region": "Khulna",
+    "district": "Satkhira",
+    "city": "Satkhira",
+    "zones": ["Tala", "Assasuni", "Kalaroa", "Debhata"],
+    "status": "active",
+    "chart": "https://example.com/satkhira-chart.png",
+    "lag": 89.0809,
+    "lat": 22.7085
+  },
+  {
+    "region": "Khulna",
+    "district": "Bagerhat",
+    "city": "Bagerhat",
+    "zones": ["Mongla", "Rampal", "Fakirhat", "Kachua"],
+    "status": "active",
+    "chart": "https://example.com/bagerhat-chart.png",
+    "lag": 89.7926,
+    "lat": 22.6516
+  },
+  {
+    "region": "Khulna",
+    "district": "Magura",
+    "city": "Magura",
+    "zones": ["Sreepur", "Mohammadpur", "Shalikha"],
+    "status": "active",
+    "chart": "https://example.com/magura-chart.png",
+    "lag": 89.4194,
+    "lat": 23.4853
+  },
+  {
+    "region": "Khulna",
+    "district": "Narail",
+    "city": "Narail",
+    "zones": ["Lohagara", "Kalia", "Narail Sadar"],
+    "status": "active",
+    "chart": "https://example.com/narail-chart.png",
+    "lag": 89.5,
+    "lat": 23.1667
+  },
+  {
+    "region": "Khulna",
+    "district": "Jhenaidah",
+    "city": "Jhenaidah",
+    "zones": ["Harinakunda", "Shailkupa", "Kaliganj"],
+    "status": "active",
+    "chart": "https://example.com/jhenaidah-chart.png",
+    "lag": 89.1833,
+    "lat": 23.5333
+  },
+  {
+    "region": "Khulna",
+    "district": "Chuadanga",
+    "city": "Chuadanga",
+    "zones": ["Alamdanga", "Damurhuda", "Jibannagar"],
+    "status": "active",
+    "chart": "https://example.com/chuadanga-chart.png",
+    "lag": 88.85,
+    "lat": 23.64
+  },
+  {
+    "region": "Khulna",
+    "district": "Meherpur",
+    "city": "Meherpur",
+    "zones": ["Mujibnagar", "Gangni"],
+    "status": "active",
+    "chart": "https://example.com/meherpur-chart.png",
+    "lag": 88.6318,
+    "lat": 23.7623
+  },
+  {
+    "region": "Rajshahi",
+    "district": "Rajshahi",
+    "city": "Rajshahi",
+    "zones": ["Boalia", "Rajpara", "Motihar", "Shah Makhdum", "Paba"],
+    "status": "active",
+    "chart": "https://example.com/rajshahi-chart.png",
+    "lag": 88.6087,
+    "lat": 24.3745
+  },
+  {
+    "region": "Rajshahi",
+    "district": "Natore",
+    "city": "Natore",
+    "zones": ["Baraigram", "Bagatipara", "Lalpur", "Singra"],
+    "status": "active",
+    "chart": "https://example.com/natore-chart.png",
+    "lag": 89,
+    "lat": 24.4167
+  },
+  {
+    "region": "Rajshahi",
+    "district": "Naogaon",
+    "city": "Naogaon",
+    "zones": ["Manda", "Sapahar", "Porsha", "Patnitala"],
+    "status": "active",
+    "chart": "https://example.com/naogaon-chart.png",
+    "lag": 88.93,
+    "lat": 24.8236
+  },
+  {
+    "region": "Rajshahi",
+    "district": "Chapainawabganj",
+    "city": "Chapainawabganj",
+    "zones": ["Shibganj", "Bholahat", "Gomostapur"],
+    "status": "active",
+    "chart": "https://example.com/chapai-chart.png",
+    "lag": 88.27,
+    "lat": 24.5962
+  },
+  {
+    "region": "Rajshahi",
+    "district": "Pabna",
+    "city": "Pabna",
+    "zones": ["Ishwardi", "Bera", "Chatmohar", "Atgharia"],
+    "status": "active",
+    "chart": "https://example.com/pabna-chart.png",
+    "lag": 89.2331,
+    "lat": 24.0037
+  },
+  {
+    "region": "Rajshahi",
+    "district": "Sirajganj",
+    "city": "Sirajganj",
+    "zones": ["Ullapara", "Kazipur", "Shahjadpur", "Belkuchi"],
+    "status": "active",
+    "chart": "https://example.com/sirajganj-chart.png",
+    "lag": 89.7167,
+    "lat": 24.45
+  },
+  {
+    "region": "Rajshahi",
+    "district": "Joypurhat",
+    "city": "Joypurhat",
+    "zones": ["Akkelpur", "Kalai", "Panchbibi"],
+    "status": "active",
+    "chart": "https://example.com/joypurhat-chart.png",
+    "lag": 89.0412,
+    "lat": 25.0953
+  },
+  {
+    "region": "Rajshahi",
+    "district": "Bogura",
+    "city": "Bogura",
+    "zones": [
+      "Sariakandi",
+      "Sonatola",
+      "Gabtali",
+      "Sherpur",
+      "Shajahanpur"
+    ],
+    "status": "active",
+    "chart": "https://example.com/bogura-chart.png",
+    "lag": 89.37,
+    "lat": 24.85
+  },
+  {
+    "region": "Barisal",
+    "district": "Barisal",
+    "city": "Barisal",
+    "zones": [
+      "Band Road",
+      "Cox’s Road",
+      "Kawnia",
+      "Rupatali",
+      "Nathullabad"
+    ],
+    "status": "active",
+    "chart": "https://example.com/barisal-chart.png",
+    "lag": 90.3667,
+    "lat": 22.7
+  },
+  {
+    "region": "Barisal",
+    "district": "Bhola",
+    "city": "Bhola",
+    "zones": ["Borhanuddin", "Tazumuddin", "Daulatkhan", "Char Fasson"],
+    "status": "active",
+    "chart": "https://example.com/bhola-chart.png",
+    "lag": 90.6311,
+    "lat": 22.685
+  },
+  {
+    "region": "Barisal",
+    "district": "Patuakhali",
+    "city": "Patuakhali",
+    "zones": ["Kalapara", "Mirzaganj", "Dashmina", "Galachipa"],
+    "status": "active",
+    "chart": "https://example.com/patuakhali-chart.png",
+    "lag": 90.3333,
+    "lat": 22.35
+  },
+  {
+    "region": "Barisal",
+    "district": "Pirojpur",
+    "city": "Pirojpur",
+    "zones": ["Mathbaria", "Bhandaria", "Kawkhali", "Nazirpur"],
+    "status": "active",
+    "chart": "https://example.com/pirojpur-chart.png",
+    "lag": 89.975,
+    "lat": 22.5833
+  },
+  {
+    "region": "Barisal",
+    "district": "Barguna",
+    "city": "Barguna",
+    "zones": ["Amtali", "Patharghata", "Betagi", "Bamna"],
+    "status": "active",
+    "chart": "https://example.com/barguna-chart.png",
+    "lag": 90.1167,
+    "lat": 22.1667
+  },
+  {
+    "region": "Barisal",
+    "district": "Jhalokati",
+    "city": "Jhalokati",
+    "zones": ["Nalchity", "Rajapur", "Kathalia"],
+    "status": "active",
+    "chart": "https://example.com/jhalokati-chart.png",
+    "lag": 90.2167,
+    "lat": 22.6417
+  },
+  {
+    "region": "Mymensingh",
+    "district": "Mymensingh",
+    "city": "Mymensingh",
+    "zones": [
+      "Trishal",
+      "Muktagachha",
+      "Bhaluka",
+      "Phulpur",
+      "Haluaghat"
+    ],
+    "status": "active",
+    "chart": "https://example.com/mymensingh-chart.png",
+    "lag": 90.3987,
+    "lat": 24.7539
+  },
+  {
+    "region": "Mymensingh",
+    "district": "Netrokona",
+    "city": "Netrokona",
+    "zones": ["Khaliajuri", "Mohanganj", "Durgapur", "Barhatta"],
+    "status": "active",
+    "chart": "https://example.com/netrokona-chart.png",
+    "lag": 90.7333,
+    "lat": 24.8833
+  },
+  {
+    "region": "Mymensingh",
+    "district": "Jamalpur",
+    "city": "Jamalpur",
+    "zones": ["Madarganj", "Islampur", "Sarishabari", "Baksiganj"],
+    "status": "active",
+    "chart": "https://example.com/jamalpur-chart.png",
+    "lag": 89.9333,
+    "lat": 24.9167
+  },
+  {
+    "region": "Mymensingh",
+    "district": "Sherpur",
+    "city": "Sherpur",
+    "zones": ["Nakla", "Nalitabari", "Jhenaigati", "Sreebardi"],
+    "status": "active",
+    "chart": "https://example.com/sherpur-chart.png",
+    "lag": 90.0333,
+    "lat": 25.0333
+  },
+  {
+    "region": "Chattogram",
+    "district": "Bandarban",
+    "city": "Bandarban",
+    "zones": ["Bandarban Sadar", "Thanchi", "Lama", "Rowangchhari"],
+    "status": "active",
+    "chart": "https://example.com/bandarban-chart.png",
+    "lag": 92.2186,
+    "lat": 22.1958
+  },
+  {
+    "region": "Khulna",
+    "district": "Kushtia",
+    "city": "Kushtia",
+    "zones": [
+      "Kushtia Sadar",
+      "Kumarkhali",
+      "Khoksa",
+      "Mirpur",
+      "Bheramara",
+      "Daulatpur"
+    ],
+    "status": "active",
+    "chart": "https://example.com/kushtia-chart.png",
+    "lag": 89.122,
+    "lat": 23.9013
+  }
+]
