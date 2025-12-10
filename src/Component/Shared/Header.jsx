@@ -27,7 +27,7 @@ const Header = () => {
         )}
         <li className="flex gap-2 justify-center items-center">
           <GrServicePlay />
-          <Link>Service</Link>
+          <Link to='/Service'>Service</Link>
         </li>
         <li className="flex gap-2 justify-center items-center">
           <FcAbout />

@@ -29,7 +29,8 @@ const router = createBrowserRouter([
       },
       {
         path : '/Service',
-        element: <Service></Service>
+        element: <Service></Service>,
+        loader: ()=> fetch('http://localhost:3000/Service').then(res=> res.json())
       },
        {
        path : '/Covarage-Area-Map',

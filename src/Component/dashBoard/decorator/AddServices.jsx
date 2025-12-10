@@ -15,7 +15,7 @@ const AddServices = () => {
     formState: { errors },
   } = useForm();
   const onSubmitSign = async (data) => {
-    console.log(data);
+    // console.log(data);
     const {
       serviceName,
       servicePrice,
@@ -35,14 +35,14 @@ const AddServices = () => {
       serviceFeatures,
       serviceDescription,
       createAt: new Date(),
-      decoratior: {
+      decorator: {
         name: user?.displayName,
         email: user?.email,
         photo: user.photoURL,
       },
     };
     console.table(serviceData);
-    urlAxios.post("/service", data);
+    urlAxios.post("/service", serviceData);
   };
 
   const onError = (errors) => {
@@ -117,13 +117,13 @@ const AddServices = () => {
                 />
 
                 <label className="font-semibold">Mode</label>
-                <select
-                  {...register("mode")}
-                  className="w-full p-2 border rounded-md"
+                <input
+                  {...register("category")}
+                  className="input"
+                   placeholder="Enter your Service Mode"
                 >
-                  <option value="On-Site">On-Site</option>
-                  <option value="Online">Online</option>
-                </select>
+                 
+                </input>
 
                 <label className="label">
                   Add Service features (comma separated)
