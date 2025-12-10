@@ -26,10 +26,6 @@ const SignUp = () => {
         console.log(res);
         return (
           signInData(photoData)
-            // const formPhoto = new FormData()
-            // formPhoto.append('image' , photoData)
-            // const loadImgBB = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_Img_Host_Key}`
-            // axios.post(loadImgBB , formPhoto)
             .then((imgURL) => {
               const obj = {
                 displayName: data.name,

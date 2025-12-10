@@ -21,7 +21,7 @@ const DashBoard = () => {
             <Logo></Logo>
           </nav>
 
-          <div className="bg-cyan-50 p-10">
+          <div className="">
             <Outlet></Outlet>
           </div>
         </div>

@@ -4,18 +4,45 @@ import { Link } from "react-router";
 import { useAuth } from "../../../hooks/useAuth";
 import { GrServicePlay } from "react-icons/gr";
 import useUser from "../../../hooks/useUser";
+import { signInData } from "../../../utilities/img";
 
 const AddServices = () => {
   const { user } = useAuth();
-  const urlAxios = useUser()
+  const urlAxios = useUser();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmitSign = (data) => {
+  const onSubmitSign = async (data) => {
     console.log(data);
-   urlAxios.post('/service' , data)
+    const {
+      serviceName,
+      servicePrice,
+      serviceDuration,
+      mode,
+      serviceFeatures,
+      serviceDescription,
+    } = data;
+    const serviceImg = data.servicePhoto[0];
+    const servicePhoto = await signInData(serviceImg);
+    const serviceData = {
+      servicePhoto: servicePhoto,
+      serviceName,
+      servicePrice : Number(servicePrice),
+      serviceDuration,
+      mode,
+      serviceFeatures,
+      serviceDescription,
+      createAt: new Date(),
+      decoratior: {
+        name: user?.displayName,
+        email: user?.email,
+        photo: user.photoURL,
+      },
+    };
+    console.table(serviceData);
+    urlAxios.post("/service", data);
   };
 
   const onError = (errors) => {
@@ -24,7 +51,7 @@ const AddServices = () => {
 
   return (
     <>
-      <div className=" rounded-2xl p-10">
+      <div className="bg-cyan-50  p-10">
         <div className="flex justify-center items-center flex-col md:flex-row md:gap-10">
           <div className="">
             <h1 className="text-4xl  font-bold text-center text-cyan-800 ">
@@ -54,7 +81,7 @@ const AddServices = () => {
 
                 <label className="label">Photo</label>
                 <input
-                  {...register("photo", { required: true })}
+                  {...register("servicePhoto", { required: true })}
                   type="file"
                   className="file-input"
                   placeholder="Enter your photo"
