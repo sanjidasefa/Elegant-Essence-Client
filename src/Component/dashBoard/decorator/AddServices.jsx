@@ -3,9 +3,11 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router";
 import { useAuth } from "../../../hooks/useAuth";
 import { GrServicePlay } from "react-icons/gr";
+import useUser from "../../../hooks/useUser";
 
 const AddServices = () => {
   const { user } = useAuth();
+  const urlAxios = useUser()
   const {
     register,
     handleSubmit,
@@ -13,6 +15,7 @@ const AddServices = () => {
   } = useForm();
   const onSubmitSign = (data) => {
     console.log(data);
+   urlAxios.post('/service' , data)
   };
 
   const onError = (errors) => {
@@ -73,7 +76,7 @@ const AddServices = () => {
                 <label className="label">Service Price</label>
                 <input
                   {...register("servicePrice", { required: true })}
-                  type="text"
+                  type="number"
                   className="input"
                   placeholder="Enter your Service Price"
                 />
@@ -86,15 +89,18 @@ const AddServices = () => {
                   placeholder="Enter your Service Duration"
                 />
 
-                <label className="label">Add Service Mode</label>
-                <input
-                  {...register("serviceMode", { required: true })}
-                  type="text"
-                  className="input"
-                  placeholder="Enter your Service Duration"
-                />
+                <label className="font-semibold">Mode</label>
+                <select
+                  {...register("mode")}
+                  className="w-full p-2 border rounded-md"
+                >
+                  <option value="On-Site">On-Site</option>
+                  <option value="Online">Online</option>
+                </select>
 
-                <label className="label">Add Service features </label>
+                <label className="label">
+                  Add Service features (comma separated)
+                </label>
                 <input
                   {...register("serviceFeatures", { required: true })}
                   type="text"

@@ -11,11 +11,13 @@ import MyProfile from '../Component/Profile/MyProfile';
 import Service from '../Component/service/Service';
 import AddServices from '../Component/dashBoard/decorator/AddServices';
 import Map from '../Component/map/Map';
+import RouteLoder from './RouteLoder';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <HomeLayout></HomeLayout>,
+    hydrateFallbackElement: <RouteLoder></RouteLoder> ,
     children : [
       {
         index : true,
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
        {
        path : '/Covarage-Area-Map',
        element: <Map></Map> ,
-       loader : () => fetch('warehouses.json').then(res=> res.json())
+       loader : () => fetch('Area.json').then(res=> res.json())
       },
     ]
   },
