@@ -12,6 +12,7 @@ import Service from '../Component/service/Service';
 import AddServices from '../Component/dashBoard/decorator/AddServices';
 import Map from '../Component/map/Map';
 import RouteLoder from './RouteLoder';
+import ServiceDetails from '../Component/service/ServiceDetails';
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path : '/Service',
         element: <Service></Service>,
         loader: ()=> fetch('http://localhost:3000/Service').then(res=> res.json())
+      },
+      {
+        path : '/Service/:id',
+        element: <ServiceDetails></ServiceDetails>,
       },
        {
        path : '/Covarage-Area-Map',

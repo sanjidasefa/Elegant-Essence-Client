@@ -1,10 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
 import { useAuth } from "../../../hooks/useAuth";
-import { GrServicePlay } from "react-icons/gr";
 import useUser from "../../../hooks/useUser";
 import { signInData } from "../../../utilities/img";
+import { useMutation } from "@tanstack/react-query";
+import Swal from "sweetalert2";
 
 const AddServices = () => {
   const { user } = useAuth();
@@ -14,13 +14,19 @@ const AddServices = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  
+  const {mutateAsync} = useMutation({
+     mutationFn : async addedService => 
+      await urlAxios.post("/service", addedService)
+  })
+
   const onSubmitSign = async (data) => {
     // console.log(data);
     const {
       serviceName,
       servicePrice,
       serviceDuration,
-      mode,
+      category,
       serviceFeatures,
       serviceDescription,
     } = data;
@@ -31,10 +37,10 @@ const AddServices = () => {
       serviceName,
       servicePrice : Number(servicePrice),
       serviceDuration,
-      mode,
+      category,
       serviceFeatures,
       serviceDescription,
-      createAt: new Date(),
+      ceatedAt : new Date().toLocaleDateString(),
       decorator: {
         name: user?.displayName,
         email: user?.email,
@@ -42,13 +48,30 @@ const AddServices = () => {
       },
     };
     console.table(serviceData);
-    urlAxios.post("/service", serviceData);
+     Swal.fire({
+  title: "Are you sure?",
+  text: `Your service added`,
+  icon: "question",
+  showCancelButton: true,
+  confirmButtonColor: "#CAEB66",
+  cancelButtonColor: "#03373D",
+  confirmButtonText: "Add service"
+}).then(async(result) => {
+  if (result.isConfirmed) {
+     await mutateAsync(serviceData)
+    .then(res =>{
+      console.log(res.data)
+    })
+    Swal.fire({
+      title: "Approved",
+      text: "your selected percel send.",
+      icon: "success"
+    });
+  }
+});
   };
 
-  const onError = (errors) => {
-    console.log("Validation errors:", errors);
-  };
-
+  
   return (
     <>
       <div className="bg-cyan-50  p-10">
@@ -66,83 +89,93 @@ const AddServices = () => {
           </div>
           <div className="card bg-cyan-600 w-full max-w-sm shrink-0 shadow-2xl">
             <div className="card-body">
-              <form onSubmit={handleSubmit(onSubmitSign, onError)}>
-                <label className="label">Service Provider Email</label>
+              <form onSubmit={handleSubmit(onSubmitSign)}>
+                <label className="label mt-2">Service Provider Email</label>
                 <input
                   {...register("email", { required: true })}
                   type="email"
-                  className="input"
+                  className="input "
                   placeholder="Example@gmail.com"
                   defaultValue={user.email}
                 />
-                {errors.email?.type === "required" && (
+                {errors.email?.type === "required" && 
                   <p className="text-red-600">Email not valid </p>
-                )}
+                }
 
-                <label className="label">Photo</label>
+                <label className="label mt-2">Photo</label>
                 <input
-                  {...register("servicePhoto", { required: true })}
+                  {...register("servicePhoto")}
                   type="file"
-                  className="file-input"
+                  className="file-input "
                   placeholder="Enter your photo"
                 />
-                {errors.photo?.type === "required" && (
-                  <p className="text-red-600">
-                    Please Enter Your Service Photo
-                  </p>
-                )}
 
-                <label className="label">Service Name</label>
+                <label className="label mt-2">Service Name</label>
                 <input
                   {...register("serviceName", { required: true })}
                   type="text"
-                  className="input"
+                  className="input "
                   placeholder="Enter your Service Name"
                 />
+                {errors.serviceName?.type === "required" && 
+                  <p className="text-red-600">Enter your Name</p>
+                }
 
-                <label className="label">Service Price</label>
+                <label className="label mt-2">Service Price</label>
                 <input
                   {...register("servicePrice", { required: true })}
                   type="number"
-                  className="input"
+                  className="input  "
                   placeholder="Enter your Service Price"
                 />
+                {errors.servicePrice?.type === "required" && 
+                  <p className="text-red-600">Enter your Service Price </p>
+                }
 
-                <label className="label">Service Duration</label>
+                <label className="label mt-2">Service Duration</label>
                 <input
                   {...register("serviceDuration", { required: true })}
                   type="text"
-                  className="input"
+                  className="input "
                   placeholder="Enter your Service Duration"
                 />
 
-                <label className="font-semibold">Mode</label>
+                {errors.serviceDuration?.type === "required" && 
+                  <p className="text-red-600">Enter your Service Duration </p>
+                }
+
+                <label className="mt-2">Mode</label>
                 <input
                   {...register("category")}
-                  className="input"
+                  className="input "
                    placeholder="Enter your Service Mode"
                 >
-                 
                 </input>
-
-                <label className="label">
+               {errors.category?.type === "required" && 
+                  <p className="text-red-600">Enter your Service Category </p>
+                }
+                <label className="label mt-2">
                   Add Service features (comma separated)
                 </label>
                 <input
                   {...register("serviceFeatures", { required: true })}
                   type="text"
-                  className="input"
+                  className="input  "
                   placeholder="Enter your Service Features"
                 />
-
-                <label className="label">Service Description</label>
+                   {errors.serviceFeatures?.type === "required" && 
+                  <p className="text-red-600">Enter your Service Features </p>
+                }
+                <label className="label mt-2">Service Description</label>
                 <textarea
                   {...register("serviceDescription", { required: true })}
                   placeholder="Enter your Service Description"
-                  className="textarea textarea-primary"
+                  className="textarea textarea-primary  "
                 ></textarea>
-
-                <button type="submit" className="btn btn-neutral mt-4 w-full">
+               {errors.serviceDescription?.type === "required" && 
+                  <p className="text-red-600">Enter your Service Description</p>
+                }
+           <button type="submit" className="btn btn-neutral mt-4 w-full">
                   Add Service
                 </button>
               </form>

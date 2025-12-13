@@ -58,6 +58,16 @@ const DashBoard = () => {
                 <span className="flex gap-2"><GrServicePlay />Add-Services</span>
                 </Link>
               </li>
+              <li>
+                <Link to="" className="font-semibold" data-tip="Services">
+                <span className="flex gap-2"><GrServicePlay />Your Payment</span>
+                </Link>
+              </li>
+              <li>
+                <Link to="" className="font-semibold" data-tip="Services">
+                <span className="flex gap-2"><GrServicePlay />Add-Services</span>
+                </Link>
+              </li>
             </ul>
             <ul className="menu w-full ">
               <h1 className="text-cyan-700 text-lg font-bold">GENERAL</h1>

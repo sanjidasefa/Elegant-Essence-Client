@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import {  NavLink } from "react-router";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { GrServicePlay } from "react-icons/gr";
 import { FcAbout } from "react-icons/fc";
@@ -12,34 +12,34 @@ const Header = () => {
   const { user } = useAuth();
   return (
     <div className="p-7 bg-cyan-50 text-cyan-800">
-      <ul className="flex justify-start gap-4 md:gap-10 md:px-10 text-lg md:text-xl font-semibold ">
+      <ul className="flex flex-col md:flex-row justify-start gap-3 md:gap-10 md:px-10 text-lg md:text-xl font-semibold ">
         <li className="flex gap-2 justify-center items-center">
           <IoHomeOutline />
-          <Link to="/">Home</Link>
+          <NavLink to="/">Home</NavLink>
         </li>
         {user ? (
           <li className="flex gap-2 justify-center items-center">
             <LuLayoutDashboard> </LuLayoutDashboard>
-            <Link to="Dashboard">Dashboard</Link>
+            <NavLink to="Dashboard">Dashboard</NavLink>
           </li>
         ) : (
           ""
         )}
         <li className="flex gap-2 justify-center items-center">
           <GrServicePlay />
-          <Link to='/Service'>Service</Link>
+          <NavLink to='/Service'>Service</NavLink>
         </li>
         <li className="flex gap-2 justify-center items-center">
           <FcAbout />
-          <Link>About</Link>
+          <NavLink>About</NavLink>
         </li>
         <li className="flex gap-2 justify-center items-center">
           <LuContact />
-          <Link>Contact</Link>
+          <NavLink>Contact</NavLink>
         </li>
         <li className="flex gap-2 justify-center items-center">
           <PiMapPinAreaBold />
-          <Link to="/Covarage-Area-Map"> Area</Link>
+          <NavLink to="/Covarage-Area-Map"> Area</NavLink>
         </li>
       </ul>
     </div>

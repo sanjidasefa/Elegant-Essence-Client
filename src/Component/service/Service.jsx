@@ -1,5 +1,7 @@
 import React from 'react';
-import { useLoaderData } from 'react-router';
+import { Link, useLoaderData } from 'react-router';
+import { MdOutlineAttachMoney } from "react-icons/md";
+import { MdOutlineTimer } from "react-icons/md";
 
 const Service = () => {
   const serviceData = useLoaderData()
@@ -18,13 +20,14 @@ const Service = () => {
   <div className="card-body">
     <h2 className="card-title">
      {service.serviceName}
-      <div className="badge ml-12 badge-outline">{service.serviceDuration}</div>
+      <div className="badge ml-12 badge-outline"><MdOutlineTimer />{service.serviceDuration}</div>
     </h2>
-      <div className="badge badge-secondary">{service.servicePrice}</div>
+      <div className="badge p-3 font-bold text-lg"><MdOutlineAttachMoney />{service.servicePrice}</div>
     <p>{service.serviceDescription}</p>
     <div className="card-actions justify-end">
       <div className="text-cyan-300 text-xs">{service.createAt}</div>
     </div>
+    <Link className='text-pink-400' to={`/Service/${service._id}`}>See More ..</Link>
   </div>
 </div>
         ))
