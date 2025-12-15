@@ -45,6 +45,7 @@ const AddServices = () => {
         name: user?.displayName,
         email: user?.email,
         photo: user.photoURL,
+        number : user?.number,
       },
     };
     console.table(serviceData);
@@ -144,11 +145,11 @@ const AddServices = () => {
                   <p className="text-red-600">Enter your Service Duration </p>
                 }
 
-                <label className="mt-2">Mode</label>
+                <label className="mt-2">Category </label>
                 <input
                   {...register("category")}
                   className="input "
-                   placeholder="Enter your Service Mode"
+                   placeholder="Enter your Service category"
                 >
                 </input>
                {errors.category?.type === "required" && 

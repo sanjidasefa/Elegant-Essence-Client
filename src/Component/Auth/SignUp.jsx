@@ -112,6 +112,16 @@ const SignUp = () => {
                   {errors.email?.type === "required" && (
                     <p className="text-red-600">Email not valid </p>
                   )}
+                  <label className="label">Number</label>
+                  <input
+                    {...register("number", { required: true })}
+                    type="number"
+                    className="input"
+                    placeholder="+088 ********"
+                  />
+                  {errors.number?.type === "required" && (
+                    <p className="text-red-600">Please Enter your Number </p>
+                  )}
 
                   <label className="label">Password</label>
                   <input

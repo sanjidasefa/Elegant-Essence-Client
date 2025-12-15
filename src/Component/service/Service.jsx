@@ -5,7 +5,7 @@ import { MdOutlineTimer } from "react-icons/md";
 
 const Service = () => {
   const serviceData = useLoaderData()
-  console.log(serviceData)
+  //console.log(serviceData)
   return (
     <div className='bg-white p-20'>
       <div className='flex flex-wrap gap-10 justify-center items-center'>

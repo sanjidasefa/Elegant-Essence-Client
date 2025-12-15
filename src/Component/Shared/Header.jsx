@@ -31,7 +31,7 @@ const Header = () => {
         </li>
         <li className="flex gap-2 justify-center items-center">
           <FcAbout />
-          <NavLink>About</NavLink>
+          <NavLink to='/about'>About</NavLink>
         </li>
         <li className="flex gap-2 justify-center items-center">
           <LuContact />
