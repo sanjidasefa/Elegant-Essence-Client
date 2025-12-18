@@ -15,6 +15,7 @@ import RouteLoder from './RouteLoder';
 import ServiceDetails from '../Component/service/ServiceDetails';
 import About from '../Component/About/About';
 import PaymentSuccess from '../Component/dashBoard/User/Payment/PaymentSuccess';
+import PaymentCanceled from '../Component/dashBoard/User/Payment/PaymentCanceled';
 
 const router = createBrowserRouter([
   {
@@ -60,7 +61,11 @@ const router = createBrowserRouter([
     {
       path : 'payment-success' , 
       element : <PaymentSuccess></PaymentSuccess>
-    }
+    },
+    {
+      path : 'payment-cancelled' , 
+      element : <PaymentCanceled></PaymentCanceled>
+    },
     ]
   },
 {

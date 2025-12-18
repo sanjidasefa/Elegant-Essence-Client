@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'
-import { Link } from 'react-router';
+import { Link, useSearchParams } from 'react-router';
+import useUser from '../../../../hooks/useUser';
 
 const PaymentSuccess = () => {
+  const axios = useUser()
+  const [searchParams ] = useSearchParams()
    const { width, height } = useWindowSize()
+   const sessionId = searchParams.get('session_id')
+   useEffect(()=> {
+    if(sessionId){
+      axios.patch(`/payment-success?session_id=${sessionId}`, {sessionId})
+      .then(res => {
+        console.log(res.data)
+      })
+    }
+   },[sessionId , axios])
+  //  useEffect(()=> {
+  //   if(sessionId){
+  //     axios.post(`/payment-success`, {sessionId})
+  //   }
+  //  },[sessionId , axios])
   return (
     <>
       <Confetti
            width={width}
            height={height}
          />
-      <div className="card w-96 bg-white shadow-2xl">
+     <div className='flex justify-center mt-20'>
+       <div className="card w-96 bg-white shadow-2xl">
   <div className="card-body">
     <span className="badge badge-xs badge-warning">Paid</span>
     <div >
@@ -20,10 +38,11 @@ const PaymentSuccess = () => {
     </div>
  
     <div className="mt-6">
-     <Link className="btn">GO TO HOME</Link>
+     <Link to='/' className="btn">GO TO HOME</Link>
     </div>
   </div>
 </div>
+     </div>
     </>
   );
 };

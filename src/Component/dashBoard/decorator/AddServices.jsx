@@ -14,14 +14,13 @@ const AddServices = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  
-  const {mutateAsync} = useMutation({
-     mutationFn : async addedService => 
-      await urlAxios.post("/service", addedService)
-  })
+
+  const { mutateAsync } = useMutation({
+    mutationFn: async (addedService) =>
+      await urlAxios.post("/service", addedService),
+  });
 
   const onSubmitSign = async (data) => {
-    // console.log(data);
     const {
       serviceName,
       servicePrice,
@@ -35,44 +34,42 @@ const AddServices = () => {
     const serviceData = {
       servicePhoto: servicePhoto,
       serviceName,
-      servicePrice : Number(servicePrice),
+      servicePrice: Number(servicePrice),
       serviceDuration,
       category,
       serviceFeatures,
       serviceDescription,
-      ceatedAt : new Date().toLocaleDateString(),
+      ceatedAt: new Date().toLocaleDateString(),
       decorator: {
         name: user?.displayName,
         email: user?.email,
         photo: user.photoURL,
-        number : user?.number,
+        number: user?.number,
       },
     };
     console.table(serviceData);
-     Swal.fire({
-  title: "Are you sure?",
-  text: `Your service added`,
-  icon: "question",
-  showCancelButton: true,
-  confirmButtonColor: "#CAEB66",
-  cancelButtonColor: "#03373D",
-  confirmButtonText: "Add service"
-}).then(async(result) => {
-  if (result.isConfirmed) {
-     await mutateAsync(serviceData)
-    .then(res =>{
-      console.log(res.data)
-    })
     Swal.fire({
-      title: "Approved",
-      text: "your selected percel send.",
-      icon: "success"
+      title: "Are you sure?",
+      text: `Your service added`,
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#CAEB66",
+      cancelButtonColor: "#03373D",
+      confirmButtonText: "Add service",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await mutateAsync(serviceData).then((res) => {
+          console.log(res.data);
+        });
+        Swal.fire({
+          title: "Approved",
+          text: "your selected percel send.",
+          icon: "success",
+        });
+      }
     });
-  }
-});
   };
 
-  
   return (
     <>
       <div className="bg-cyan-50  p-10">
@@ -99,9 +96,9 @@ const AddServices = () => {
                   placeholder="Example@gmail.com"
                   defaultValue={user.email}
                 />
-                {errors.email?.type === "required" && 
+                {errors.email?.type === "required" && (
                   <p className="text-red-600">Email not valid </p>
-                }
+                )}
 
                 <label className="label mt-2">Photo</label>
                 <input
@@ -118,9 +115,9 @@ const AddServices = () => {
                   className="input "
                   placeholder="Enter your Service Name"
                 />
-                {errors.serviceName?.type === "required" && 
+                {errors.serviceName?.type === "required" && (
                   <p className="text-red-600">Enter your Name</p>
-                }
+                )}
 
                 <label className="label mt-2">Service Price</label>
                 <input
@@ -129,9 +126,9 @@ const AddServices = () => {
                   className="input  "
                   placeholder="Enter your Service Price"
                 />
-                {errors.servicePrice?.type === "required" && 
+                {errors.servicePrice?.type === "required" && (
                   <p className="text-red-600">Enter your Service Price </p>
-                }
+                )}
 
                 <label className="label mt-2">Service Duration</label>
                 <input
@@ -141,20 +138,19 @@ const AddServices = () => {
                   placeholder="Enter your Service Duration"
                 />
 
-                {errors.serviceDuration?.type === "required" && 
+                {errors.serviceDuration?.type === "required" && (
                   <p className="text-red-600">Enter your Service Duration </p>
-                }
+                )}
 
                 <label className="mt-2">Category </label>
                 <input
                   {...register("category")}
                   className="input "
-                   placeholder="Enter your Service category"
-                >
-                </input>
-               {errors.category?.type === "required" && 
+                  placeholder="Enter your Service category"
+                ></input>
+                {errors.category?.type === "required" && (
                   <p className="text-red-600">Enter your Service Category </p>
-                }
+                )}
                 <label className="label mt-2">
                   Add Service features (comma separated)
                 </label>
@@ -164,19 +160,19 @@ const AddServices = () => {
                   className="input  "
                   placeholder="Enter your Service Features"
                 />
-                   {errors.serviceFeatures?.type === "required" && 
+                {errors.serviceFeatures?.type === "required" && (
                   <p className="text-red-600">Enter your Service Features </p>
-                }
+                )}
                 <label className="label mt-2">Service Description</label>
                 <textarea
                   {...register("serviceDescription", { required: true })}
                   placeholder="Enter your Service Description"
                   className="textarea textarea-primary  "
                 ></textarea>
-               {errors.serviceDescription?.type === "required" && 
+                {errors.serviceDescription?.type === "required" && (
                   <p className="text-red-600">Enter your Service Description</p>
-                }
-           <button type="submit" className="btn btn-neutral mt-4 w-full">
+                )}
+                <button type="submit" className="btn btn-neutral mt-4 w-full">
                   Add Service
                 </button>
               </form>

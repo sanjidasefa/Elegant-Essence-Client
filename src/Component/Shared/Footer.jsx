@@ -6,24 +6,28 @@ const Footer = () => {
     <div>
       <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
   <nav>
-    <h6 className="footer-title">Services</h6>
-    <a className="link link-hover">Birthday</a>
-    <a className="link link-hover">Weddiing</a>
-    <a className="link link-hover">Marketing</a>
-    <a className="link link-hover">Advertisement</a>
+    <h6 className="footer-title">Contact-Info</h6>
+    <a className="link link-hover">Phone : 017****** </a>
+    <a className="link link-hover">Email : elegantEssence@gmail.com </a>
+    <a className="link link-hover">Address : Mirpur-1, Dhaka</a>
   </nav>
   <nav>
     <h6 className="footer-title">Company</h6>
     <a className="link link-hover">About us</a>
     <a className="link link-hover">Contact</a>
     <a className="link link-hover">Coverage Map</a>
-    <a className="link link-hover">Press kit</a>
   </nav>
   <nav>
     <h6 className="footer-title">Legal</h6>
     <a className="link link-hover">Terms of use</a>
     <a className="link link-hover">Privacy policy</a>
     <a className="link link-hover">Cookie policy</a>
+  </nav>
+  <nav>
+    <h6 className="footer-title">Working Time</h6>
+    <a className="link link-hover">Sunday-Thursday : 9:00 PM -6:00 PM</a>
+    <a className="link link-hover">Saturday: 10:00 AM - 5:00PM</a>
+    <a className="link link-hover">Friday: off day</a>
   </nav>
 </footer>
 <footer className=" bg-base-200 text-base-content border-base-300 border-t px-10 py-4">

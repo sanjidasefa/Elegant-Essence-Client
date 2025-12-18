@@ -6,12 +6,14 @@ import RouteError from "../../Routes/RouteError";
 import RouteLoder from "../../Routes/RouteLoder";
 import { useForm } from "react-hook-form";
 import { useAuth } from "../../hooks/useAuth";
-import { MdOutlineAttachMoney } from "react-icons/md";
+import { MdOutlineAttachMoney, MdOutlineTimer } from "react-icons/md";
 import { SiNamecheap } from "react-icons/si";
 import { ImMail4 } from "react-icons/im";
 import { PiPhoneCallFill } from "react-icons/pi";
+import { useMutation } from "@tanstack/react-query";
 
 const ServiceDetails = () => {
+  const { id } = useParams();
   const {
     register,
     handleSubmit,
@@ -19,9 +21,11 @@ const ServiceDetails = () => {
   } = useForm();
   const { user } = useAuth();
   const [modal, setModal] = useState(false);
-  const { id } = useParams();
   const axios = useUser();
-
+  const { mutateAsync } = useMutation({
+    mutationFn: async (bookingData) =>
+      await axios.post("/serviceBooking", bookingData),
+  });
   const {
     data: service = [],
     isLoading,
@@ -44,19 +48,41 @@ const ServiceDetails = () => {
     return <RouteError></RouteError>;
   }
 
-  const handleBooking = () => {};
-
-  const handlePayment = async () => {
-    const payment = {
-      clintId: service._id,
-      email: user.email,
+  const handleBooking = async (data) => {
+    const booking = {
       serviceName: service.serviceName,
-      description: service.serviceDescription,
       servicePrice: service.servicePrice,
+      email: user.email,
+      clintId: service._id,
+       clientAddress: data.userAddress,
+      contactNumber: data.contactNumber,
+      status : 'pending',
     };
-    const result = await axios.post("/create-checkout-session", payment);
-    window.location.href = result.data.url;
+    console.log(booking);
+    try {
+      const bokkingData = await mutateAsync(booking);
+      const bookingId = bokkingData.insertedId.toString();
+      const payment = {
+        bookingId,
+        clientId: service._id,
+        serviceName: service.serviceName,
+        description: service.serviceDescription,
+        servicePrice: service.servicePrice,
+        email : user.email,
+        client: {
+          name : user.displayName,
+          clientAddress: data.userAddress,
+          contactNumber: data.contactNumber,
+          email: user.email,
+        },
+      };
+      const result = await axios.post("/create-checkout-session", payment);
+      window.location.assign(result.data.url) 
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <div className="bg-white p-8 md:p-20">
       <div className="bg-cyan-100 p-10 rounded-2xl shadow-2xl">
@@ -65,10 +91,16 @@ const ServiceDetails = () => {
             <img src={service.servicePhoto} alt="" className="rounded-2xl " />
           </div>
           <div>
-            <h1 className="font-bold text-3xl text-cyan-800">
-              {service.serviceName}
-            </h1>
-            <h1 className="font-bold text-3xl text-gray-500 bg-white w-1/4 rounded-2xl text-center pb-2 my-2">
+            <div className="flex justify-between items-center">
+              <h1 className="font-bold text-3xl text-cyan-800">
+                {service.serviceName}
+              </h1>
+              <div className="badge badge-outline text-gray-500">
+                <MdOutlineTimer />
+                {service.serviceDuration}
+              </div>
+            </div>
+            <h1 className="font-bold text-3xl text-gray-500   ">
               category {service.category}
             </h1>
             <p className="text-gray-500 font-semibold my-4">
@@ -135,6 +167,20 @@ const ServiceDetails = () => {
               <form onSubmit={handleSubmit(handleBooking)}>
                 <div className=" text-2xl w-[400px] px-4">
                   <label className="label text-sm font-bold mt-1">
+                    Service Provider Email
+                  </label>
+                  <input
+                    {...register("clientEmail", { required: true })}
+                    type="email"
+                    className="input "
+                    placeholder="Example@gmail.com"
+                    defaultValue={user.email}
+                  />
+                  {errors.email?.type === "required" && (
+                    <p className="text-red-600">Email not valid </p>
+                  )}
+
+                  <label className="label text-sm font-bold mt-1">
                     Your Address
                   </label>
                   <input
@@ -164,15 +210,14 @@ const ServiceDetails = () => {
                 <div className="modal-action">
                   <button
                     type="button"
-                    className="btn  text-lg bg-green-400 text-white rounded-2xl mt-3"
+                    className="btn  rounded-2xl mt-3"
                     onClick={() => setModal(false)}
                   >
                     Cancel
                   </button>
                   <button
-                    onClick={handlePayment}
                     type="submit"
-                    className="btn  text-lg bg-green-400 text-white  rounded-2xl mt-3"
+                    className="btn bg-white text-cyan-700 rounded-2xl mt-3"
                   >
                     Payment
                   </button>
