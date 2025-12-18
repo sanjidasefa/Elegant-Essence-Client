@@ -34,7 +34,6 @@ const ServiceDetails = () => {
     queryKey: ["service-Details", id],
     queryFn: async () => {
       const result = await axios.get(`/Service/${id}`);
-      //console.log(result.data);
       return result.data;
     },
     retry: false,
@@ -60,10 +59,10 @@ const ServiceDetails = () => {
     };
     console.log(booking);
     try {
-      const bokkingData = await mutateAsync(booking);
-      const bookingId = bokkingData.insertedId.toString();
+     const bookingData = await mutateAsync(booking); 
+     const bookingId =  bookingData.data.insertedId
       const payment = {
-        bookingId,
+        bookingId : bookingId,
         clientId: service._id,
         serviceName: service.serviceName,
         description: service.serviceDescription,
@@ -86,16 +85,16 @@ const ServiceDetails = () => {
   return (
     <div className="bg-white p-8 md:p-20">
       <div className="bg-cyan-100 p-10 rounded-2xl shadow-2xl">
-        <div className="flex md:flex-col lg:flex-row gap-10">
+        <div className="flex flex-col lg:flex-row gap-10">
           <div>
             <img src={service.servicePhoto} alt="" className="rounded-2xl " />
           </div>
           <div>
-            <div className="flex justify-between items-center">
+            <div className="lg:flex justify-between  items-center">
               <h1 className="font-bold text-3xl text-cyan-800">
                 {service.serviceName}
               </h1>
-              <div className="badge badge-outline text-gray-500">
+              <div className="badge mt-3 lg:mt-0 badge-outline text-gray-500">
                 <MdOutlineTimer />
                 {service.serviceDuration}
               </div>

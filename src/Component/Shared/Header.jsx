@@ -12,7 +12,7 @@ const Header = () => {
   const { user } = useAuth();
   return (
     <div className="p-7 bg-cyan-50 text-cyan-800">
-      <ul className="flex flex-col md:flex-row justify-start gap-3 md:gap-10 md:px-10 text-lg md:text-xl font-semibold ">
+      <ul className="flex flex-col md:flex-row justify-start gap-3 lg:gap-10 md:px-10 text-lg md:text-xl font-semibold ">
         <li className="flex gap-2 justify-center items-center">
           <IoHomeOutline />
           <NavLink to="/">Home</NavLink>

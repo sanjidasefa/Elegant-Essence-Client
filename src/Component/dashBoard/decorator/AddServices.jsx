@@ -5,6 +5,7 @@ import useUser from "../../../hooks/useUser";
 import { signInData } from "../../../utilities/img";
 import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
+import add from '../../../assets/add.png'
 
 const AddServices = () => {
   const { user } = useAuth();
@@ -75,6 +76,7 @@ const AddServices = () => {
       <div className="bg-cyan-50  p-10">
         <div className="flex justify-center items-center flex-col md:flex-row md:gap-10">
           <div className="">
+            <img src={add} alt="" className="w-80 h-80" />
             <h1 className="text-4xl  font-bold text-center text-cyan-800 ">
               Add Your Service{" "}
             </h1>

@@ -3,6 +3,8 @@ import { Link, Outlet } from "react-router";
 import { TfiAlignLeft } from "react-icons/tfi";
 import Logo from "../Component/Extra/Logo";
 import { GrServicePlay } from "react-icons/gr";
+import { MdOutlineBookmarks } from "react-icons/md";
+import { RiSecurePaymentLine } from "react-icons/ri";
 
 const DashBoard = () => {
   return (
@@ -58,14 +60,16 @@ const DashBoard = () => {
                 <span className="flex gap-2"><GrServicePlay />Add-Services</span>
                 </Link>
               </li>
+            
               <li>
-                <Link to="" className="font-semibold" data-tip="Services">
-                <span className="flex gap-2"><GrServicePlay />Your Payment</span>
+                <Link to="booking-list" className="font-semibold" data-tip="Services">
+                <span className="flex gap-2"><MdOutlineBookmarks />Bookings</span>
                 </Link>
               </li>
-              <li>
-                <Link to="" className="font-semibold" data-tip="Services">
-                <span className="flex gap-2"><GrServicePlay />Add-Services</span>
+
+               <li>
+                <Link to="payment-list" className="font-semibold" data-tip="Services">
+                <span className="flex gap-2"><RiSecurePaymentLine />Payment List</span>
                 </Link>
               </li>
             </ul>

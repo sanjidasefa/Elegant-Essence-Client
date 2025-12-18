@@ -16,6 +16,8 @@ import ServiceDetails from '../Component/service/ServiceDetails';
 import About from '../Component/About/About';
 import PaymentSuccess from '../Component/dashBoard/User/Payment/PaymentSuccess';
 import PaymentCanceled from '../Component/dashBoard/User/Payment/PaymentCanceled';
+import Booking from '../Component/dashBoard/User/Booking';
+import PaymentHistory from '../Component/dashBoard/User/PaymentHistory';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +67,14 @@ const router = createBrowserRouter([
     {
       path : 'payment-cancelled' , 
       element : <PaymentCanceled></PaymentCanceled>
+    },
+    {
+     path : 'booking-list' ,
+     element : <Booking></Booking>
+    },
+    {
+     path : 'payment-list' ,
+     element : <PaymentHistory></PaymentHistory>
     },
     ]
   },
