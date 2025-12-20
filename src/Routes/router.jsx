@@ -18,6 +18,7 @@ import PaymentSuccess from '../Component/dashBoard/User/Payment/PaymentSuccess';
 import PaymentCanceled from '../Component/dashBoard/User/Payment/PaymentCanceled';
 import Booking from '../Component/dashBoard/User/Booking';
 import PaymentHistory from '../Component/dashBoard/User/PaymentHistory';
+import Projects from '../Component/dashBoard/decorator/Projects';
 
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
     {
      path : 'payment-list' ,
      element : <PaymentHistory></PaymentHistory>
+    },
+    {
+     path : 'My-projects' ,
+     element : <Projects></Projects>
     },
     ]
   },

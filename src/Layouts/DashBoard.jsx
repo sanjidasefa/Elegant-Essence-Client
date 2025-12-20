@@ -5,6 +5,8 @@ import Logo from "../Component/Extra/Logo";
 import { GrServicePlay } from "react-icons/gr";
 import { MdOutlineBookmarks } from "react-icons/md";
 import { RiSecurePaymentLine } from "react-icons/ri";
+import { CgProfile } from "react-icons/cg";
+import { RiCustomerServiceLine } from "react-icons/ri";
 
 const DashBoard = () => {
   return (
@@ -56,44 +58,63 @@ const DashBoard = () => {
                 </Link>
               </li>
               <li>
-                <Link to="Add-Services" className="font-semibold" data-tip="Services">
-                <span className="flex gap-2"><GrServicePlay />Add-Services</span>
-                </Link>
-              </li>
-            
-              <li>
-                <Link to="booking-list" className="font-semibold" data-tip="Services">
-                <span className="flex gap-2"><MdOutlineBookmarks />Bookings</span>
+                <Link
+                  to="Add-Services"
+                  className="font-semibold"
+                  data-tip="Services"
+                >
+                  <span className="flex gap-2">
+                    <GrServicePlay />
+                    Add-Services
+                  </span>
                 </Link>
               </li>
 
-               <li>
-                <Link to="payment-list" className="font-semibold" data-tip="Services">
-                <span className="flex gap-2"><RiSecurePaymentLine />Payment List</span>
+              <li>
+                <Link
+                  to="booking-list"
+                  className="font-semibold"
+                  data-tip="Services"
+                >
+                  <span className="flex gap-2">
+                    <MdOutlineBookmarks />
+                    Bookings
+                  </span>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="payment-list"
+                  className="font-semibold"
+                  data-tip="Services"
+                >
+                  <span className="flex gap-2">
+                    <RiSecurePaymentLine />
+                    Payment List
+                  </span>
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  to="My-projects"
+                  className="font-semibold"
+                  data-tip="Services"
+                >
+                  <span className="flex gap-2">
+                    <RiCustomerServiceLine />
+                    My Project List
+                  </span>
                 </Link>
               </li>
             </ul>
             <ul className="menu w-full ">
               <h1 className="text-cyan-700 text-lg font-bold">GENERAL</h1>
               <li>
-                <Link className="" data-tip="Settings">
-                  {/* Settings icon */}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    strokeLinejoin="round"
-                    strokeLinecap="round"
-                    strokeWidth="2"
-                    fill="none"
-                    stroke="currentColor"
-                    className="my-1.5 inline-block size-4"
-                  >
-                    <path d="M20 7h-9"></path>
-                    <path d="M14 17H5"></path>
-                    <circle cx="17" cy="17" r="3"></circle>
-                    <circle cx="7" cy="7" r="3"></circle>
-                  </svg>
-                  <span className="">Settings</span>
+                <Link to="/My-Profile" className="" data-tip="">
+                  <CgProfile />
+                  <span className="">My Profile</span>
                 </Link>
               </li>
             </ul>

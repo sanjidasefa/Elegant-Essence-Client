@@ -11,6 +11,7 @@ import { SiNamecheap } from "react-icons/si";
 import { ImMail4 } from "react-icons/im";
 import { PiPhoneCallFill } from "react-icons/pi";
 import { useMutation } from "@tanstack/react-query";
+import toast from "react-hot-toast";
 
 const ServiceDetails = () => {
   const { id } = useParams();
@@ -23,13 +24,16 @@ const ServiceDetails = () => {
   const [modal, setModal] = useState(false);
   const axios = useUser();
   const { mutateAsync } = useMutation({
-    mutationFn: async (bookingData) =>
-      await axios.post("/serviceBooking", bookingData),
+    mutationFn: async (bookingData) => {
+      const result = await axios.post("/serviceBooking", bookingData);
+      return result.data;
+    },
   });
   const {
     data: service = [],
     isLoading,
     isError,
+    refetch,
   } = useQuery({
     queryKey: ["service-Details", id],
     queryFn: async () => {
@@ -51,35 +55,20 @@ const ServiceDetails = () => {
     const booking = {
       serviceName: service.serviceName,
       servicePrice: service.servicePrice,
-      email: user.email,
-      clintId: service._id,
-       clientAddress: data.userAddress,
+      clientEmail: user.email,
+      clientId: service._id,
+      clientAddress: data.userAddress,
       contactNumber: data.contactNumber,
-      status : 'pending',
+      status: "pending",
+      createdAt: new Date(),
     };
     console.log(booking);
-    try {
-     const bookingData = await mutateAsync(booking); 
-     const bookingId =  bookingData.data.insertedId
-      const payment = {
-        bookingId : bookingId,
-        clientId: service._id,
-        serviceName: service.serviceName,
-        description: service.serviceDescription,
-        servicePrice: service.servicePrice,
-        email : user.email,
-        client: {
-          name : user.displayName,
-          clientAddress: data.userAddress,
-          contactNumber: data.contactNumber,
-          email: user.email,
-        },
-      };
-      const result = await axios.post("/create-checkout-session", payment);
-      window.location.assign(result.data.url) 
-    } catch (error) {
-      console.log(error);
-    }
+    const res = await mutateAsync(booking);
+    toast.success(
+      "your Service is booked successfully , please check your booking list for pay "
+    );
+    console.log("Inserted ID:", res.insertedId);
+    refetch();
   };
 
   return (
@@ -218,7 +207,7 @@ const ServiceDetails = () => {
                     type="submit"
                     className="btn bg-white text-cyan-700 rounded-2xl mt-3"
                   >
-                    Payment
+                    Book Now
                   </button>
                 </div>
               </form>

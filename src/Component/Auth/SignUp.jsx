@@ -9,7 +9,7 @@ import { updateProfile } from "firebase/auth";
 import { signInData } from "../../utilities/img";
 
 const SignUp = () => {
-  const { createUser, google } = useAuth();
+  const {setUser, createUser, google } = useAuth();
   const {
     register,
     handleSubmit,
@@ -32,6 +32,7 @@ const SignUp = () => {
                 photoURL: imgURL,
               };
               updateProfile(auth.currentUser, obj)
+                setUser({...auth.currentUser})
                 .then(() => {
                   console.log("data updated");
                   navigate(location?.state || "/");
@@ -45,7 +46,10 @@ const SignUp = () => {
   };
   const handleGoogle = () => {
     google()
-      .then((res) => console.log(res))
+      .then((res) => {
+        setUser(res.user)
+        navigate(location?.state || '/')
+      })
       .catch((err) => console.log(err));
   };
 

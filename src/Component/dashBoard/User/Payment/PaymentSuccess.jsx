@@ -15,13 +15,12 @@ const PaymentSuccess = () => {
       .then(res => {
         console.log(res.data)
       })
+      .catch(err => {
+        console.log('payment update failed',err)
+      })
     }
    },[sessionId , axios])
-  //  useEffect(()=> {
-  //   if(sessionId){
-  //     axios.post(`/payment-success`, {sessionId})
-  //   }
-  //  },[sessionId , axios])
+ 
   return (
     <>
       <Confetti
