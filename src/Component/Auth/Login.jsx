@@ -2,27 +2,42 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router";
 import { useAuth } from "../../hooks/useAuth";
+import { saveUser } from "../../utilities/img";
+import useUser from "../../hooks/useUser";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const axios = useUser()
      const {register, handleSubmit , formState:{errors}} = useForm()
  const { signIn , google } = useAuth()
 const navigate = useNavigate();
 
-const onSubmitLog = (data) => {
+const onSubmitLog =async (data) => {
   console.log('data' , data);
-    signIn(data.email , data.password)
-    .then(res => {
-      console.log(res)
-      navigate(location?.state || '/')
-    })
-    .catch(err => console.log(err))
+   const res = await signIn(data.email , data.password)
+    const userInfo = {
+             email: data.email,
+             password: data.password,
+            image: data.imgURL,
+           };
+           saveUser(axios, userInfo);
+           toast.success('Log-in Successfully')
+           navigate(location?.state || "/");
+    console.log(res)
 }
- const handleGoogle =() => {
-      google()
-      .then(res => console.log(res))
-    .catch(err => console.log(err))
-    }
- const onError = (errors) => {
+ const handleGoogle = async () => {
+    const res =  await  google()
+    const user = res.user
+             const userInfo = {
+             email: user.email,
+             password: user.password,
+             image: user.imgURL,
+           };
+           saveUser(axios, userInfo);
+           navigate(location?.state || "/");
+     };
+
+      const onError = (errors) => {
     console.log("Validation errors:", errors);
   };
 

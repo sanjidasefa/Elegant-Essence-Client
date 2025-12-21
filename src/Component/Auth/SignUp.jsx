@@ -6,10 +6,13 @@ import { useForm } from "react-hook-form";
 import { useAuth } from "../../hooks/useAuth";
 import { auth } from "../../firebase/firebase.config";
 import { updateProfile } from "firebase/auth";
-import { signInData } from "../../utilities/img";
+import { saveUser, signInData } from "../../utilities/img";
+import useUser from "../../hooks/useUser";
+import toast from "react-hot-toast";
 
 const SignUp = () => {
-  const {setUser, createUser, google } = useAuth();
+  const axios = useUser();
+  const { createUser, google } = useAuth();
   const {
     register,
     handleSubmit,
@@ -17,40 +20,45 @@ const SignUp = () => {
   } = useForm();
   const navigate = useNavigate();
 
-  const onSubmitSign = (data) => {
+  const onSubmitSign = async (data) => {
     console.log(data);
     const photoData = data.photo[0];
 
-    createUser(data.email, data.password)
-      .then((res) => {
-        console.log(res);
-        return (
-          signInData(photoData)
-            .then((imgURL) => {
-              const obj = {
-                displayName: data.name,
-                photoURL: imgURL,
-              };
-              updateProfile(auth.currentUser, obj)
-                setUser({...auth.currentUser})
-                .then(() => {
-                  console.log("data updated");
-                  navigate(location?.state || "/");
-                })
-                .catch((err) => console.log(err));
-            })
-            .catch((err) => console.log(err))
-        );
-      })
-      .catch((error) => console.log(error));
-  };
-  const handleGoogle = () => {
-    google()
-      .then((res) => {
-        setUser(res.user)
-        navigate(location?.state || '/')
+    const res = await createUser(data.email, data.password);
+
+    signInData(photoData)
+      .then((imgURL) => {
+        const obj = {
+          displayName: data.name,
+          photoURL: imgURL,
+        };
+        const userInfo = {
+          email: data.email,
+          password: data.password,
+          image: imgURL,
+        };
+        saveUser(axios, userInfo);
+        toast.success('Sign UP successfully')
+        updateProfile(auth.currentUser, obj)
+          .then(() => {
+            console.log("data updated");
+            navigate(location?.state || "/");
+          })
+          .catch((err) => console.log(err));
       })
       .catch((err) => console.log(err));
+    console.log(res);
+  };
+  const handleGoogle = async() => {
+ const res =  await  google()
+ const user = res.user
+          const userInfo = {
+          email: user.email,
+          password: user.password,
+          image: user.imgURL,
+        };
+        saveUser(axios, userInfo);
+        navigate(location?.state || "/");
   };
 
   const onError = (errors) => {
