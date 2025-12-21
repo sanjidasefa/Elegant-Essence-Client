@@ -29,7 +29,7 @@ const Projects = () => {
     enabled : !!user?.email ,
     queryFn: async () => {
       const data = await axios.get(`/my-projects?email=${user.email}`);
-      //console.log(data.data);
+      console.log(data.data);
       return data.data;
     },
   });
@@ -75,7 +75,8 @@ const Projects = () => {
   }
 
   return (
-    <div className="p-10 bg-cyan-100 ">
+   <div className="">
+     <div className="p-10 bg-cyan-100 rounded-2xl">
       <h1 className="text-4xl  font-bold text-center text-cyan-800 ">
         My Projects
       </h1>
@@ -204,6 +205,7 @@ const Projects = () => {
       )}
 
     </div>
+   </div>
   );
 };
 

@@ -4,7 +4,7 @@ import { MdOutlineAttachMoney } from "react-icons/md";
 import { MdOutlineTimer } from "react-icons/md";
 
 const Service = () => {
-  const serviceData = useLoaderData()
+  const serviceData = useLoaderData([])
   //console.log(serviceData)
   return (
     <div className='bg-white p-20'>
@@ -28,7 +28,7 @@ const Service = () => {
 </div>
       <div className='flex flex-wrap gap-10 justify-center items-center'>
         {
-        serviceData.map(service => (
+        serviceData?.map(service => (
            <div key={service._id} className="card bg-cyan-700 w-96 shadow-sm">
   <figure>
     <img

@@ -55,14 +55,17 @@ const ServiceDetails = () => {
     const booking = {
       serviceName: service.serviceName,
       servicePrice: service.servicePrice,
-      clientEmail: user.email,
       clientId: service._id,
-      clientAddress: data.userAddress,
-      contactNumber: data.contactNumber,
+     decorator : service.decorator,
       status: "pending",
       createdAt: new Date(),
+      client :{
+        clientAddress: data.userAddress,
+      contactNumber: data.contactNumber,
+       clientEmail: user.email,
+      }
     };
-    console.log(booking);
+    // console.log(booking);
     const res = await mutateAsync(booking);
     toast.success(
       "your Service is booked successfully , please check your booking list for pay "
@@ -70,7 +73,7 @@ const ServiceDetails = () => {
     console.log("Inserted ID:", res.insertedId);
     refetch();
   };
-
+// console.log(service)
   return (
     <div className="bg-white p-8 md:p-20">
       <div className="bg-cyan-100 p-10 rounded-2xl shadow-2xl">
@@ -118,7 +121,7 @@ const ServiceDetails = () => {
                     className="btn btn-neutral mt-4 shadow-2xl "
                     onClick={() => setModal(true)}
                   >
-                    Book Now
+                    Book Decoration Service
                   </button>
                 </div>
               </div>

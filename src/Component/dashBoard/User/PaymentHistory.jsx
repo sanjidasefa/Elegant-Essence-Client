@@ -56,7 +56,7 @@ const PaymentHistory = () => {
                 return (
                   <tr
                     key={booking._id}
-                    className="hover:bg-white hover:text-cyan-900"
+                    className="text-cyan-800"
                   >
                     <th>{index + 1}</th>
                     <td>{booking.serviceName}</td>

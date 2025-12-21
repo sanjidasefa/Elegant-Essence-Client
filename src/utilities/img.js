@@ -10,3 +10,8 @@ export const signInData = async imgData =>{
     )
     return data?.data?.display_url
 }
+
+export const saveUser = async(axios ,user)=>{
+  const {data } = await axios.post('/user' , user)
+  return data;
+}

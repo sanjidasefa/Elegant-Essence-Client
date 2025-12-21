@@ -23,6 +23,39 @@ const Banner3 = () => {
         modules={[Navigation, Pagination, Autoplay]}
       >
         <SwiperSlide>
+          <div className="card bg-base-100 image-full shadow-sm">
+            <figure>
+              <img
+                src={celebrate}
+                alt="service"
+                className="w-full h-[80vh] object-cover"
+              />
+            </figure>
+            <div className="card-body lg:my-50 my-20 flex justify-center  items-center">
+              <h2 className=" text-5xl text-center font-bold">
+                Celebration & Event Decoration With Our Service Package
+              </h2>
+              <p className="text-lg text-center">
+                We provide comprehensive decoration services for all types of
+                events, ensuring every occasion becomes memorable and visually
+                stunning. From weddings, birthdays, anniversaries, to corporate
+                events and community celebrations, our professional team handles
+                every detail with creativity and precision.
+                <br />
+                Clients can choose from themed setups, custom designs, and
+                on-site execution, ensuring the décor matches the event’s style,
+                venue, and mood. Our goal is to create an enchanting atmosphere
+                that leaves a lasting impression on guests and brings your
+                vision to life.
+              </p>
+              <Link to="/Service">
+                <button className="btn bg-white text-cyan-900">Book Decoration Service</button>
+              </Link>
+            </div>
+          </div>
+        </SwiperSlide>
+
+        <SwiperSlide>
           <div className="card bg-base-100 w-full  image-full  shadow-sm">
             <figure>
               <img
@@ -39,7 +72,9 @@ const Banner3 = () => {
                 Professional event and home decoration services tailored to your
                 style and special moments.
               </p>
-              <p className="text-xl text-cyan-200">Click Here For More Service Explore</p>
+              <p className="text-xl text-cyan-200">
+                Click Here For More Service Explore
+              </p>
               <Link>
                 {" "}
                 <button className="btn btn-primary">Explore Services</button>
@@ -136,17 +171,17 @@ const Banner3 = () => {
                 decorator availability, and select their preferred date and time
                 slots with confidence. Users can choose between in-studio
                 consultations or on-site decoration services based on their
-                needs and convenience. 
+                needs and convenience.
               </p>
               <p className="text-lg text-cyan-200 text-center lg:w-1/2">
-                 The system also provides a secure and
-                seamless payment process, ensuring a smooth booking experience
-                from start to finish. Customers can track their service status
-                in real time, receive timely notifications for updates, and
-                share feedback through ratings and reviews after service
-                completion. Overall, this platform enhances transparency,
-                efficiency, and user satisfaction by managing decoration
-                services in a smart, organized, and user-friendly way.
+                The system also provides a secure and seamless payment process,
+                ensuring a smooth booking experience from start to finish.
+                Customers can track their service status in real time, receive
+                timely notifications for updates, and share feedback through
+                ratings and reviews after service completion. Overall, this
+                platform enhances transparency, efficiency, and user
+                satisfaction by managing decoration services in a smart,
+                organized, and user-friendly way.
               </p>
             </div>
           </div>
@@ -173,28 +208,6 @@ const Banner3 = () => {
                 spaces into elegant and comfortable environments.
               </p>
             </div>
-          </div>
-        </SwiperSlide>
-       
-        <SwiperSlide>
-          <div className="card bg-base-100 image-full shadow-sm">
-            <figure>
-              <img
-                src={celebrate}
-                alt="service"
-                className="w-full h-[80vh] object-cover"
-              />
-            </figure>
-            <div className="card-body lg:my-50 my-20 flex justify-center  items-center">
-              <h2 className=" text-5xl text-center font-bold">
-                Celebration & Event Decoration
-              </h2>
-              <p className="text-lg text-center">
-               We provide comprehensive decoration services for all types of events, ensuring every occasion becomes memorable and visually stunning. From weddings, birthdays, anniversaries, to corporate events and community celebrations, our professional team handles every detail with creativity and precision.
-<br />
-Clients can choose from themed setups, custom designs, and on-site execution, ensuring the décor matches the event’s style, venue, and mood. Our goal is to create an enchanting atmosphere that leaves a lasting impression on guests and brings your vision to life.
-              </p>
-              </div>
           </div>
         </SwiperSlide>
       </Swiper>

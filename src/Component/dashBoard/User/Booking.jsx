@@ -7,7 +7,6 @@ import { MdOutlineBookmarkAdd } from "react-icons/md";
 import { MdOutlineDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import RouteLoder from "../../../Routes/RouteLoder";
-import RouteError from "../../../Routes/RouteError";
 
 const Booking = () => {
   const { user } = useAuth();
@@ -35,6 +34,7 @@ const Booking = () => {
       cancelButtonColor: "#d33",
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
+       refetch();
       if (result.isConfirmed) {
         axios.delete(`/serviceBooking/${id}`);
         Swal.fire({
@@ -42,7 +42,7 @@ const Booking = () => {
           text: "Your booking has been deleted.",
           icon: "success",
         });
-        refetch();
+       
       }
     });
   };
@@ -52,14 +52,15 @@ const Booking = () => {
       serviceName: booking.serviceName,
       description: booking.serviceDescription,
       servicePrice: booking.servicePrice,
-      email: user.email,
+      decorator : booking.decorator,
       client: {
         name: user.displayName,
-        clientAddress: booking.userAddress,
-        contactNumber: booking.contactNumber,
-        clientEmail: user.email,
+         clientAddress: booking.client.clientAddress,
+      contactNumber: booking.client.contactNumber,
+      clientEmail: booking.client.clientEmail,
       },
     };
+    // console.log(booking)
     const result = await axios.post("/create-checkout-session", payment);
     window.location.assign(result.data.url);
   };
@@ -122,8 +123,8 @@ const Booking = () => {
                       </button>
                     )}
                   </td>
-                  <td>{booking.clientAddress}</td>
-                  <td>{booking.contactNumber}</td>
+                  <td> {booking.client?.contactNumber || booking.contactNumber}</td>
+                  <td>{booking.client?.clientAddress}</td>
                   <td>
                     <button onClick={() => handleDelete(booking._id)}>
                       <MdOutlineDelete />

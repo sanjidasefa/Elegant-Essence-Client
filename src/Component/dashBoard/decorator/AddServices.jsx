@@ -96,7 +96,7 @@ const AddServices = () => {
                   type="email"
                   className="input "
                   placeholder="Example@gmail.com"
-                  defaultValue={user.email}
+                  defaultValue={ user.email}
                 />
                 {errors.email?.type === "required" && (
                   <p className="text-red-600">Email not valid </p>
@@ -142,6 +142,17 @@ const AddServices = () => {
 
                 {errors.serviceDuration?.type === "required" && (
                   <p className="text-red-600">Enter your Service Duration </p>
+                )}
+                <label className="label mt-2">Per Unit</label>
+                <input
+                  {...register("serviceUnit", { required: true })}
+                  type="text"
+                  className="input "
+                  placeholder="Enter your Service Per Unit"
+                />
+
+                {errors.serviceUnit?.type === "required" && (
+                  <p className="text-red-600">Enter your Service Per Unit  </p>
                 )}
 
                 <label className="mt-2">Category </label>

@@ -7,6 +7,8 @@ import { MdOutlineBookmarks } from "react-icons/md";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { RiCustomerServiceLine } from "react-icons/ri";
+import { BsPersonAdd } from "react-icons/bs";
+import { BiBookmarkAltPlus } from "react-icons/bi";
 
 const DashBoard = () => {
   return (
@@ -25,7 +27,7 @@ const DashBoard = () => {
             <Logo></Logo>
           </nav>
 
-          <div className="">
+          <div className="p-15">
             <Outlet></Outlet>
           </div>
         </div>
@@ -36,7 +38,7 @@ const DashBoard = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-64 is-drawer-open:w-64">
+          <div className="bg-cyan-800 flex min-h-full flex-col items-start is-drawer-close:w-64 is-drawer-open:w-64">
             <ul className="menu w-full">
               <h1 className="c text-lg font-bold">MENU</h1>
               <li>
@@ -108,9 +110,33 @@ const DashBoard = () => {
                   </span>
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="Decorators-List"
+                  className="font-semibold"
+                  data-tip="Services"
+                >
+                  <span className="flex gap-2">
+                  <BsPersonAdd />
+                   Decorator's
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="Manage-Bookings"
+                  className="font-semibold"
+                  data-tip="Services"
+                >
+                  <span className="flex gap-2">   
+                    <BiBookmarkAltPlus /> 
+                  Manage Bookings
+                  </span>
+                </Link>
+              </li>
             </ul>
             <ul className="menu w-full ">
-              <h1 className="text-cyan-700 text-lg font-bold">GENERAL</h1>
+              <h1 className=" text-lg font-bold">GENERAL</h1>
               <li>
                 <Link to="/My-Profile" className="" data-tip="">
                   <CgProfile />

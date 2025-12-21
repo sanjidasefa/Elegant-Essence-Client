@@ -19,6 +19,8 @@ import PaymentCanceled from '../Component/dashBoard/User/Payment/PaymentCanceled
 import Booking from '../Component/dashBoard/User/Booking';
 import PaymentHistory from '../Component/dashBoard/User/PaymentHistory';
 import Projects from '../Component/dashBoard/decorator/Projects';
+import Decorators from '../Component/dashBoard/Admin/Decorators';
+import BookingManage from '../Component/dashBoard/Admin/BookingManage';
 
 const router = createBrowserRouter([
   {
@@ -28,7 +30,8 @@ const router = createBrowserRouter([
     children : [
       {
         index : true,
-        element : <Home></Home>
+        element : <Home></Home>,
+         loader: ()=> fetch('http://localhost:3000/Service').then(res=> res.json())
       },
       {
         path: '/My-Profile' ,
@@ -80,6 +83,14 @@ const router = createBrowserRouter([
     {
      path : 'My-projects' ,
      element : <Projects></Projects>
+    },
+    {
+     path : 'Decorators-List' ,
+     element : <Decorators></Decorators>
+    },
+    {
+     path : 'Manage-Bookings' ,
+     element : <BookingManage></BookingManage>
     },
     ]
   },
