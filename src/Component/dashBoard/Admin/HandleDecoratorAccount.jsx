@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import useRoles from "../../../hooks/useRoles";
 import RouteLoder from "../../../Routes/RouteLoder";
 import { useAuth } from "../../../hooks/useAuth";
+import { useForm } from "react-hook-form";
 
 const HandleDecoratorAccount = () => {
+    const [modal, setModal] = useState(false);
      const [role , roleLoading] = useRoles();
      const {user} = useAuth();
+      const {
+         register,
+         handleSubmit,
+       } = useForm();
+       const handleChangeRole = data =>{
+        console.log(data)
+       }
      if (roleLoading) {
       return <RouteLoder></RouteLoder>;
     }
@@ -33,13 +42,9 @@ const HandleDecoratorAccount = () => {
                   <th> {user.email}</th> 
                   <th>{role}</th>
                   <th>
-                    <select defaultValue="Pick a color" className="select">
-                      <option disabled={true}>
-                        Become a role Admin/decorator
-                      </option>
-                      <option>Admin</option>
-                      <option>Decorator</option>
-                    </select>
+                    {
+                      role === 'client' || role === 'decorator'? <button className="btn " onClick={() => setModal(true)}>Change Your Role</button> : <p className="">{role}</p>
+                    }
                   </th>
                 </tr>
               </tbody>
@@ -47,6 +52,48 @@ const HandleDecoratorAccount = () => {
           </div>
         </div>
       </div>
+       {modal && (
+        <dialog
+          open
+          id="my_modal_5"
+          className=" modal modal-bottom sm:modal-middle"
+        >
+          <div className="modal-box bg-white text-cyan-700">
+            <h3 className="font-bold "> Fill The Form For Change Your Role</h3>
+            <div>
+              <form onSubmit={handleSubmit(handleChangeRole)}>
+                <div className=" text-2xl w-[400px] px-4">
+                   <label className="label text-sm font-bold mt-1">
+                    Write Your Update Role
+                  </label>
+                  <input
+                    {...register("role", { required: true })}
+                    type="email"
+                    className="input "
+                    placeholder="Admin\Decorator"
+                    defaultValue={role}
+                  />
+                </div>
+                <div className="modal-action">
+                  <button
+                    type="button"
+                    className="btn  rounded-2xl mt-3"
+                    onClick={() => setModal(false)}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="btn bg-white text-cyan-700 rounded-2xl mt-3"
+                  >
+                    Change
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      )}
     </div>
   );
 };
