@@ -1,6 +1,6 @@
 import React from "react";
 import { GrServicePlay } from "react-icons/gr";
-import { RiCustomerServiceLine } from "react-icons/ri";
+import { RiCustomerServiceLine, RiExchangeLine } from "react-icons/ri";
 import { Link } from "react-router";
 
 const DecoratorMenu = () => {
@@ -51,6 +51,14 @@ const DecoratorMenu = () => {
               </span>
             </Link>
           </li>
+           <li>
+          <Link to="handle-User-to-decorator" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2">
+           <RiExchangeLine />
+             User to Decorator
+            </span>
+          </Link>
+        </li>
         </ul>
       </div>
     </div>

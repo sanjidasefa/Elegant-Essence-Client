@@ -1,6 +1,6 @@
 import React from "react";
 import { MdOutlineBookmarks } from "react-icons/md";
-import { RiSecurePaymentLine } from "react-icons/ri";
+import { RiExchangeLine, RiSecurePaymentLine } from "react-icons/ri";
 import { Link } from "react-router";
 
 const UserMenu = () => {
@@ -51,6 +51,14 @@ const UserMenu = () => {
               </span>
             </Link>
           </li>
+           <li>
+          <Link to="handle-User-to-decorator" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2">
+           <RiExchangeLine />
+             User to Decorator
+            </span>
+          </Link>
+        </li>
         </ul>
       </div>
     </div>
