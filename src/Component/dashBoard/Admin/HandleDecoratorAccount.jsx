@@ -74,7 +74,7 @@ const HandleDecoratorAccount = () => {
                   </label>
                   <input
                     {...register("role", { required: true })}
-                    type="email"
+                    type="text"
                     className="input "
                     placeholder="Admin\Decorator"
                     defaultValue={role}
