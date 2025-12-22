@@ -1,6 +1,8 @@
 import React from "react";
 import { BiBookmarkAltPlus } from "react-icons/bi";
 import { BsPersonAdd } from "react-icons/bs";
+import { GrServicePlay } from "react-icons/gr";
+import { MdOutlineBookmarks } from "react-icons/md";
 import { Link } from "react-router";
 
 const AdminMenu = () => {
@@ -38,18 +40,34 @@ const AdminMenu = () => {
             </span>
           </Link>
         </li>
-          <li>
-                        <Link
-                          to="Manage-Bookings"
-                          className="font-semibold"
-                          data-tip="Services"
-                        >
-                          <span className="flex gap-2">   
-                            <BiBookmarkAltPlus /> 
-                          Manage Bookings
-                          </span>
-                        </Link>
-                      </li>
+        <li>
+          <Link
+            to="Manage-Bookings"
+            className="font-semibold"
+            data-tip="Services"
+          >
+            <span className="flex gap-2">
+              <BiBookmarkAltPlus />
+              Manage Bookings
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link to="booking-list" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2">
+              <MdOutlineBookmarks />
+              Bookings
+            </span>
+          </Link>{" "}
+        </li>
+        <li>
+          <Link to="Add-Services" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2">
+              <GrServicePlay />
+              Add-Services
+            </span>
+          </Link>
+        </li>
       </ul>
     </div>
   );
