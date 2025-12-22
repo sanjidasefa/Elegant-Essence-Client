@@ -56,6 +56,10 @@ const router = createBrowserRouter([
        element: <Map></Map> ,
        loader : () => fetch('Area.json').then(res=> res.json())
       },
+       {
+     path : 'Decorators-List' ,
+     element : <Decorators></Decorators>
+    },
     ]
   },
    {

@@ -3,17 +3,23 @@ import useRoles from "../../../hooks/useRoles";
 import RouteLoder from "../../../Routes/RouteLoder";
 import { useAuth } from "../../../hooks/useAuth";
 import { useForm } from "react-hook-form";
+import useUser from "../../../hooks/useUser";
+import toast from "react-hot-toast";
 
 const HandleDecoratorAccount = () => {
     const [modal, setModal] = useState(false);
      const [role , roleLoading] = useRoles();
      const {user} = useAuth();
+     const axios = useUser()
       const {
          register,
          handleSubmit,
        } = useForm();
-       const handleChangeRole = data =>{
+       const handleChangeRole = async ( data) =>{
+      await  axios.post('/handleChangeRole')
+      toast.success('please wait for admin permission')
         console.log(data)
+        
        }
      if (roleLoading) {
       return <RouteLoder></RouteLoder>;
