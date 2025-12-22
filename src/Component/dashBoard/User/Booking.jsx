@@ -20,7 +20,7 @@ const Booking = () => {
     queryKey: ["my-Percels", user?.email],
     queryFn: async () => {
       const data = await axios.get(`/serviceBooking?email=${user.email}`);
-      console.log(data.data);
+      // console.log(data.data);
       return data.data;
     },
   });

@@ -17,7 +17,6 @@ const useUser = () => {
     });
     const resData = secureInfo.interceptors.response.use(
       (res) => {
-        res.secret = 'secured info';
         return res ;
       },
       (err) => {
