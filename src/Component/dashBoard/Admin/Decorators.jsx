@@ -3,13 +3,13 @@ import useUser from "../../../hooks/useUser";
 import { useQuery } from "@tanstack/react-query";
 import RouteLoder from "../../../Routes/RouteLoder";
 import { Link } from "react-router";
-import rating from '../../../assets/icons8-rating.gif'
-const Decorators = () => {
+import rating from '../../../assets/icons8-rating.gif';
 
+const Decorators = () => {
   const axios = useUser();
+
   const {
     data = [],
-
     isLoading,
     isError,
   } = useQuery({

@@ -9,8 +9,17 @@ import { CgProfile } from "react-icons/cg";
 import { RiCustomerServiceLine } from "react-icons/ri";
 import { BsPersonAdd } from "react-icons/bs";
 import { BiBookmarkAltPlus } from "react-icons/bi";
+import useRoles from "../hooks/useRoles";
+import UserMenu from "../Component/dashBoard/User/UserMenu";
+import DecoratorMenu from "../Component/dashBoard/decorator/DecoratorMenu";
+import AdminMenu from "../Component/dashBoard/Admin/AdminMenu";
+import RouteLoder from "../Routes/RouteLoder";
 
 const DashBoard = () => {
+  const [role, roleLoading] = useRoles();
+   if (roleLoading) {
+      return <RouteLoder></RouteLoder>;
+    }
   return (
     <>
       <div className="drawer lg:drawer-open">
@@ -40,8 +49,17 @@ const DashBoard = () => {
           ></label>
           <div className="bg-cyan-800 flex min-h-full flex-col items-start is-drawer-close:w-64 is-drawer-open:w-64">
             <ul className="menu w-full">
-              <h1 className="c text-lg font-bold">MENU</h1>
-              <li>
+              <h1 className=" text-lg font-bold">MENU</h1>
+             {
+              role === 'client' && <UserMenu></UserMenu>
+             }
+             {
+              role === 'decorator' && <DecoratorMenu></DecoratorMenu>
+             }
+             {
+              role === 'admin' && <AdminMenu></AdminMenu>
+             }          
+              {/* <li>
                 <Link to="/" className="font-semibold" data-tip="Homepage">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +76,8 @@ const DashBoard = () => {
                   </svg>
                   <span className="">Home</span>
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   to="Add-Services"
                   className="font-semibold"
@@ -70,9 +88,9 @@ const DashBoard = () => {
                     Add-Services
                   </span>
                 </Link>
-              </li>
+              </li> */}
 
-              <li>
+              {/* <li>
                 <Link
                   to="booking-list"
                   className="font-semibold"
@@ -83,9 +101,9 @@ const DashBoard = () => {
                     Bookings
                   </span>
                 </Link>
-              </li>
+              </li> */}
 
-              <li>
+              {/* <li>
                 <Link
                   to="payment-list"
                   className="font-semibold"
@@ -96,9 +114,9 @@ const DashBoard = () => {
                     Payment List
                   </span>
                 </Link>
-              </li>
+              </li> */}
 
-              <li>
+              {/* <li>
                 <Link
                   to="My-projects"
                   className="font-semibold"
@@ -109,8 +127,8 @@ const DashBoard = () => {
                     My Project List
                   </span>
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   to="Decorators-List"
                   className="font-semibold"
@@ -121,8 +139,8 @@ const DashBoard = () => {
                    Decorator's
                   </span>
                 </Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link
                   to="Manage-Bookings"
                   className="font-semibold"
@@ -133,7 +151,7 @@ const DashBoard = () => {
                   Manage Bookings
                   </span>
                 </Link>
-              </li>
+              </li> */}
             </ul>
             <ul className="menu w-full ">
               <h1 className=" text-lg font-bold">GENERAL</h1>

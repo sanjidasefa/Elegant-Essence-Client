@@ -8,10 +8,14 @@ import { updateProfile } from "firebase/auth";
 import { auth } from "../../firebase/firebase.config";
 import toast from "react-hot-toast";
 import { signInData } from "../../utilities/img";
+import useRoles from "../../hooks/useRoles";
+import RouteLoder from "../../Routes/RouteLoder";
 
 const MyProfile = () => {
   //const [name , setName ] = useState('')
   const { setUser, user, logOut } = useAuth();
+  const [role , roleLoading] = useRoles();
+  console.log(role , roleLoading)
   const [modal, setModal] = useState(false);
   const {
     register,
@@ -41,6 +45,10 @@ const MyProfile = () => {
         console.log(err);
       });
   };
+
+  if (roleLoading) {
+      return <RouteLoder></RouteLoder>;
+    }
   return (
     <div className="bg-cyan-50 p-10 flex justify-center">
       <div>
@@ -58,6 +66,7 @@ const MyProfile = () => {
               <FaEdit />
             </button>
           </div>
+          <h1 className="bg-cyan-700 badge my-2 ">{role}</h1>
           <h1 className="text-4xl font-bold mt-3 text-cyan-800 capitalize">
             {user?.displayName || "anonymous peticipate"}
           </h1>
