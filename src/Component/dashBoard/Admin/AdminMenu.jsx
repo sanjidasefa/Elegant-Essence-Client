@@ -4,6 +4,7 @@ import { BsPersonAdd } from "react-icons/bs";
 import { GrServicePlay } from "react-icons/gr";
 import { MdOutlineBookmarks } from "react-icons/md";
 import { Link } from "react-router";
+import { RiExchangeLine } from "react-icons/ri";
 
 const AdminMenu = () => {
   return (
@@ -65,6 +66,14 @@ const AdminMenu = () => {
             <span className="flex gap-2">
               <GrServicePlay />
               Add-Services
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link to="handle-User-to-decorator" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2">
+           <RiExchangeLine />
+             User to Decorator
             </span>
           </Link>
         </li>

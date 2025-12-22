@@ -73,7 +73,7 @@ const AddServices = () => {
 
   return (
     <>
-      <div className="bg-cyan-50  p-10">
+      <div className="bg-cyan-50 rounded-2xl p-10">
         <div className="flex justify-center items-center flex-col md:flex-row md:gap-10">
           <div className="">
             <img src={add} alt="" className="w-80 h-80" />

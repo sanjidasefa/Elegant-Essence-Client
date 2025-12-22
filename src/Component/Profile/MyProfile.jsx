@@ -12,10 +12,9 @@ import useRoles from "../../hooks/useRoles";
 import RouteLoder from "../../Routes/RouteLoder";
 
 const MyProfile = () => {
-  //const [name , setName ] = useState('')
   const { setUser, user, logOut } = useAuth();
   const [role , roleLoading] = useRoles();
-  console.log(role , roleLoading)
+  // console.log(role , roleLoading)
   const [modal, setModal] = useState(false);
   const {
     register,

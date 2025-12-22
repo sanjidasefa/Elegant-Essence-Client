@@ -21,6 +21,7 @@ import PaymentHistory from '../Component/dashBoard/User/PaymentHistory';
 import Projects from '../Component/dashBoard/decorator/Projects';
 import Decorators from '../Component/dashBoard/Admin/Decorators';
 import BookingManage from '../Component/dashBoard/Admin/BookingManage';
+import HandleDecoratorAccount from '../Component/dashBoard/Admin/HandleDecoratorAccount';
 
 const router = createBrowserRouter([
   {
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
     {
      path : 'Manage-Bookings' ,
      element : <BookingManage></BookingManage>
+    },
+    {
+     path : 'handle-User-to-decorator' ,
+     element : <HandleDecoratorAccount></HandleDecoratorAccount>
     },
     ]
   },
