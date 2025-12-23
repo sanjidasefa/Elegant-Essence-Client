@@ -20,10 +20,13 @@ const ChangeRole = () => {
         role : data.role,
        })
        toast.success('please wait for admin permission')
+       setModal(false)
          console.log(data)
          console.log(response)
          
         }
+
+      
       if (roleLoading) {
        return <RouteLoder></RouteLoder>;
      }
