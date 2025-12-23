@@ -21,7 +21,9 @@ import PaymentHistory from '../Component/dashBoard/User/PaymentHistory';
 import Projects from '../Component/dashBoard/decorator/Projects';
 import Decorators from '../Component/dashBoard/Admin/Decorators';
 import BookingManage from '../Component/dashBoard/Admin/BookingManage';
-import HandleDecoratorAccount from '../Component/dashBoard/Admin/HandleDecoratorAccount';
+import ChangeRole from '../Component/dashBoard/ChangeRole';
+import ManageDecorator from '../Component/dashBoard/Admin/ManageDecorator';
+
 
 const router = createBrowserRouter([
   {
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
       {
         index : true,
         element : <Home></Home>,
-         loader: ()=> fetch('http://localhost:3000/Service').then(res=> res.json())
+         loader: ()=> fetch('https://elegant-essence-server-eight.vercel.app/Service').then(res=> res.json())
       },
       {
         path: '/My-Profile' ,
@@ -41,7 +43,7 @@ const router = createBrowserRouter([
       {
         path : '/Service',
         element: <Service></Service>,
-        loader: ()=> fetch('http://localhost:3000/Service').then(res=> res.json())
+        loader: ()=> fetch('https://elegant-essence-server-eight.vercel.app/Service').then(res=> res.json())
       },
       {
        path : '/about' , 
@@ -99,7 +101,11 @@ const router = createBrowserRouter([
     },
     {
      path : 'handle-User-to-decorator' ,
-     element : <HandleDecoratorAccount></HandleDecoratorAccount>
+     element : <ChangeRole></ChangeRole>
+    },
+    {
+     path : 'Manage-Decorator' ,
+     element : <ManageDecorator></ManageDecorator>
     },
     ]
   },

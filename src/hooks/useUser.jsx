@@ -4,7 +4,7 @@ import { useAuth } from "./useAuth";
 import { useNavigate } from "react-router";
 
 const secureInfo = axios.create({
-  baseURL: "http://localhost:3000",
+  baseURL: "https://elegant-essence-server-eight.vercel.app",
 });
 
 const useUser = () => {
@@ -17,22 +17,22 @@ const useUser = () => {
     });
     const resData = secureInfo.interceptors.response.use(
       (res) => {
-        return res ;
+        return res;
       },
       (err) => {
         console.log(err);
-        const statusCode = err.status;
-        if (statusCode === 401 || statusCode === 403) {
-          logOut().then(() => {
-            navigate("/login");
-          });
-        }
+        // const statusCode = err.status;
+        // if (statusCode === 401 || statusCode === 403) {
+        //   logOut().then(() => {
+        //     navigate("/login");
+        //   });
+        // }
         return Promise.reject(err);
       }
     );
     return () => {
       secureInfo.interceptors.request.eject(reqData);
-      secureInfo.interceptors.request.eject(resData);
+      secureInfo.interceptors.response.eject(resData);
     };
   }, [user, logOut, navigate]);
   return secureInfo;

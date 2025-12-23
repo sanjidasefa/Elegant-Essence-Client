@@ -12,7 +12,7 @@ const BookingManage = () => {
     isError, } = useQuery({
     queryKey: ["manageOrders", user?.email],
     queryFn: async () => {
-      const data = await axios.get(`/manageBookings/${user.email}`);
+      const data = await axios.get(`/manageBookings}`);
       console.log(data.data);
       return data.data;
     },
@@ -25,6 +25,7 @@ const BookingManage = () => {
   if (isError) {
     return (
       <Link to="/" className="flex justify-center mt-20">
+        <p>booking not found</p>
         <button className="btn">Go to Home</button>
       </Link>
     );

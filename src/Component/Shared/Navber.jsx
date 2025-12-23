@@ -41,6 +41,9 @@ const Navber = () => {
           </Link>
         </div>
         <div className="navbar-end">
+          {
+            !user ? <Link to='/login' className="btn ">Login</Link> : ''
+          }
           {user ? (
             <Link to="/My-Profile" className="text-cyan-500">
               {" "}

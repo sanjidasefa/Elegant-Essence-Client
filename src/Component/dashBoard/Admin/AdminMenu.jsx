@@ -69,14 +69,14 @@ const AdminMenu = () => {
             </span>
           </Link>
         </li>
-        {/* <li>
-          <Link to="handle-User-to-decorator" className="font-semibold" data-tip="Services">
+        <li>
+          <Link to="Manage-Decorator" className="font-semibold" data-tip="Services">
             <span className="flex gap-2">
            <RiExchangeLine />
-             User to Decorator
+            Manage-Decorator
             </span>
           </Link>
-        </li> */}
+        </li>
       </ul>
     </div>
   );
