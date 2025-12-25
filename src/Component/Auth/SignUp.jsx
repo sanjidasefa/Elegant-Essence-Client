@@ -36,6 +36,7 @@ const SignUp = () => {
           email: data.email,
           password: data.password,
           image: imgURL,
+          number : data.number,
         };
         saveUser(axios, userInfo);
         toast.success('Sign UP successfully')
@@ -75,8 +76,8 @@ const SignUp = () => {
         }}
       >
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Sign Up!</h1>
+          <div className="text-center text-white lg:text-left">
+            <h1 className="text-5xl  font-bold">Sign Up!</h1>
             <p className="py-6 font-semibold text-lg">
               StyleDecor lets you create an account to explore decoration
               packages, check decorator availability, select a date & time,

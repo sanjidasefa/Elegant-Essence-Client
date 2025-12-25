@@ -34,9 +34,9 @@ const ManageDecorator = () => {
       </Link>
     );
   }
-  const handleRoleUpdate = async (email) => {
+  const handleRoleUpdate = async (reqData) => {
     await axios.patch("/handleChangeRole", {
-      email,
+      ...reqData,
       role: "decorator",
     });
     refetch();
@@ -62,9 +62,11 @@ const ManageDecorator = () => {
                   <tr key={requst._id}>
                     <td>{requst.email}</td>
                     <td>
-                      <button className="btn" onClick={()=>handleRoleUpdate(requst.email)}>
+                     {
+                      requst.role === 'decorator' ? <span>approved</span> :  <button className="btn" onClick={()=>handleRoleUpdate(requst.email)}>
                         decorator
                       </button>
+                     }
                     </td>
                   </tr>
                 );

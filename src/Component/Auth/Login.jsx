@@ -51,8 +51,8 @@ const onSubmitLog =async (data) => {
       >
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            <p className="py-6 font-semibold text-lg">
+            <h1 className="text-5xl font-bold text-white">Login now!</h1>
+            <p className="py-6 font-semibold text-white text-lg">
               StyleDecor is a modern appointment management system for a local
               decoration company that offers both in-studio consultations and
               on-site decoration services for homes and ceremonies. Users can
