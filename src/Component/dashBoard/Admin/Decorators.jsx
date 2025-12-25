@@ -33,34 +33,27 @@ const Decorators = () => {
   }
 
   return (
-    <div className="lg:px-20">
+    <div className="lg:px-20 ">
  <h1 className="font-bold text-3xl mb-5 ">Decorator List</h1>
-
+<div className="grid grid-cols-2 gap-10">
+  
       {data.map((decorator) => {
         return (
           <div key={decorator._id}>
             <div className="bg-white shadow-2xl my-3 rounded-2xl p-5 ">
               <div className="flex gap-10">
-                <figure>
-                  <img
-                    src={decorator.profilePhoto}
-                    alt=""
-                    className="w-80 h-40 rounded-2xl"
-                  />
-                </figure>
+                
                 <div>
-                  <h1 className="text-2xl text-cyan-800 font-bold">
+                 <div className="">
+                   <h1 className="text-2xl text-cyan-800 font-bold">
                     {decorator.name}
                   </h1>
-                  <div className="flex justify-between items-center">
-                    <p className="text-gray-500 my-3 flex gap-3 ">Rating : {decorator.rating}
+                  <div className="flex  items-center gap-1">
+                      <img src={rating} alt="" className="w-6 h-6"/>
+                    <p className="text-gray-500 my-3 flex gap-3 "> {decorator.rating}
                   </p>
-                      <div className="flex gap-1"><img src={rating} alt="" className="w-6 h-6"/>
-                      <img src={rating} alt="" className="w-6 h-6"/>
-                      <img src={rating} alt="" className="w-6 h-6"/>
-                      <img src={rating} alt="" className="w-6 h-6"/>
-                      <img src={rating} alt="" className="w-6 h-6"/></div>
                   </div>
+                 </div>
                   
                    <div>
                     <h1 className="font-bold text-cyan-700 text-xl ">
@@ -70,7 +63,7 @@ const Decorators = () => {
                       {decorator.specialties}
                     </p>
                    </div>
-                     <h1 className="font-bold text-cyan-700 text-xl ">
+                     <h1 className="font-bold text-cyan-700 mt-3 text-xl ">
                      Decorator's Top Service : 
                     </h1>
                     <p className="text-gray-500 w-1/2">
@@ -91,6 +84,7 @@ const Decorators = () => {
           </div>
         );
       })}
+</div>
     </div>
   );
 };

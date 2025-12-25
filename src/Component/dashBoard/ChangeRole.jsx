@@ -23,7 +23,6 @@ const ChangeRole = () => {
       specialties: data.specialties.split(",").map(s => s.trim()),
       topServices: data.topServices.split(",").map(s => s.trim()),
     };
-
     const response = await axios.post("/handleChangeRole", payload
     );
     if(response.data.insertedId){
@@ -51,7 +50,6 @@ const ChangeRole = () => {
                   <th>Name</th>
                   <th> Email</th>
                   <th>Default Role</th>
-
                   <th>Update Role</th>
                 </tr>
               </thead>
@@ -61,7 +59,7 @@ const ChangeRole = () => {
                   <th> {user.email}</th>
                   <th>{role}</th>
                   <th>
-                    {role === "client" || role === "decorator" ? (
+                    {role !== "admin" ? (
                       <button className="btn " onClick={() => setModal(true)}>
                         Change Your Role
                       </button>
