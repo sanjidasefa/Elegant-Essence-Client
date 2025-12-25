@@ -14,6 +14,7 @@ const ChangeRole = () => {
   const { register, handleSubmit } = useForm();
   const handleChangeRole = async (data) => {
     const payload = {
+      email : user.email,
       role: data.role,
       name: data.name,
       rating: parseFloat(data.rating),
@@ -25,8 +26,10 @@ const ChangeRole = () => {
 
     const response = await axios.post("/handleChangeRole", payload
     );
-    toast.success("please wait for admin permission");
-    setModal(false);
+    if(response.data.insertedId){
+      toast.success("please wait for admin permission");
+      setModal(false);
+    }
     console.log(data);
     console.log(response);
   };
@@ -86,6 +89,13 @@ const ChangeRole = () => {
                   <label className="label text-sm font-bold mt-1">
                     Write Your Update Role
                   </label>
+                  <input
+                    {...register("email", { required: true })}
+                    type="email"
+                    className="input "
+                    placeholder="Enter Decorator Email"
+                    defaultValue={user.email}
+                  />
                   <input
                     {...register("name", { required: true })}
                     type="text"
