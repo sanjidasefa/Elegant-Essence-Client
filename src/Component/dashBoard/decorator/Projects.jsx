@@ -25,7 +25,7 @@ const Projects = () => {
     isError,
     refetch,
   } = useQuery({
-    queryKey: ["my-Percels", user?.email],
+    queryKey: ["my-Projects", user?.email],
     enabled : !!user?.email ,
     queryFn: async () => {
       const data = await axios.get(`/my-projects?email=${user.email}`);
@@ -33,11 +33,9 @@ const Projects = () => {
       return data.data;
     },
   });
-
   if (isLoading) {
     return <RouteLoder></RouteLoder>;
   }
-
   if (isError) {
     return (
       <Link to="/" className="flex justify-center mt-20">
@@ -68,7 +66,6 @@ const Projects = () => {
   };
 
   const handleUpdate = async (data) =>{
-  // console.log(data)
   await axios.put(`/service/${selectProject._id}` , data)
   setModal(false)
   refetch()

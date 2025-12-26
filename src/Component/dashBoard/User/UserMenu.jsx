@@ -55,7 +55,7 @@ const UserMenu = () => {
           <Link to="handle-User-to-decorator" className="font-semibold" data-tip="Services">
             <span className="flex gap-2">
            <RiExchangeLine />
-             User to Decorator
+            Change Role 
             </span>
           </Link>
         </li>

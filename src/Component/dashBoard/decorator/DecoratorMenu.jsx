@@ -55,7 +55,23 @@ const DecoratorMenu = () => {
           <Link to="handle-User-to-decorator" className="font-semibold" data-tip="Services">
             <span className="flex gap-2">
            <RiExchangeLine />
-             User to Decorator
+            Change Role 
+            </span>
+          </Link>
+        </li>
+           <li>
+          <Link to="Todays-Schedule" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2">
+           <RiExchangeLine />
+           Today's Schedule
+            </span>
+          </Link>
+        </li>
+           <li>
+          <Link to="Earning-Summery" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2">
+           <RiExchangeLine />
+           Earning Summery
             </span>
           </Link>
         </li>

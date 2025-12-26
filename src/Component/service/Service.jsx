@@ -1,11 +1,27 @@
-import React from 'react';
-import { Link, useLoaderData } from 'react-router';
+import React, { useState } from 'react';
+import { Link } from 'react-router';
 import { MdOutlineAttachMoney } from "react-icons/md";
 import { MdOutlineTimer } from "react-icons/md";
+import { useQuery } from '@tanstack/react-query';
+import useUser from '../../hooks/useUser';
+import RouteLoder from '../../Routes/RouteLoder';
 
 const Service = () => {
-  const serviceData = useLoaderData([])
+  //const serviceData = useLoaderData([])
   //console.log(serviceData)
+  const [search, setSearch] = useState("");
+ const axios = useUser()
+const { data, isLoading } = useQuery({
+  queryKey: ["services", search],
+  queryFn: async () => {
+    const res = await axios.get(`/Service?search=${search}`);
+    return res.data;
+  },
+});
+if (isLoading) {
+    return <RouteLoder></RouteLoder>;
+  }
+
   return (
     <div className='bg-white p-20'>
 
@@ -23,12 +39,12 @@ const Service = () => {
       <path d="m21 21-4.3-4.3"></path>
     </g>
   </svg>
-  <input type="search" placeholder="Search" className=''/>
+  <input type="search" placeholder="Search" value={search} onChange={e=> setSearch(e.target.value)} className=''/>
 </label>
 </div>
       <div className='flex flex-wrap gap-10 justify-center items-center'>
         {
-        serviceData?.map(service => (
+        data?.map(service => (
            <div key={service._id} className="card bg-cyan-700 w-96 shadow-sm">
   <figure>
     <img

@@ -12,7 +12,7 @@ const BookingManage = () => {
     isError, } = useQuery({
     queryKey: ["manageOrders", user?.email],
     queryFn: async () => {
-      const data = await axios.get(`/manageBookings}`);
+      const data = await axios.get(`/manageBookings`);
       console.log(data.data);
       return data.data;
     },
@@ -59,14 +59,14 @@ const BookingManage = () => {
                       <td>{booking.client.clientEmail}</td>
                       <td>{booking.serviceName}</td>
                       <td>{booking.status}</td>
-                      <td>
+                      {/* <td>
                         <select defaultValue="Pick a color" className="select">
                           <option disabled={true}>Booking Confirmtion</option>
                           <option>Pending </option>
                           <option>Confirmed</option>
                           <option>Cancelled</option>
                         </select>
-                      </td>
+                      </td> */}
                       <td>{booking.paidAt}</td>
                     </tr>
                   );

@@ -17,7 +17,7 @@ const Booking = () => {
     isLoading,
     isError,
   } = useQuery({
-    queryKey: ["my-Percels", user?.email],
+    queryKey: ["my-Projects", user?.email],
     queryFn: async () => {
       const data = await axios.get(`/serviceBooking?email=${user.email}`);
       // console.log(data.data);
@@ -53,6 +53,7 @@ const Booking = () => {
       description: booking.serviceDescription,
       servicePrice: booking.servicePrice,
       decorator : booking.decorator,
+      createdAt : new Date(),
       client: {
         name: user.displayName,
          clientAddress: booking.client.clientAddress,
@@ -96,6 +97,7 @@ const Booking = () => {
               <th>Status</th>
               <th>Location</th>
               <th>Number</th>
+              <th>Booking Date</th>
             </tr>
           </thead>
           <tbody>
@@ -125,6 +127,7 @@ const Booking = () => {
                   </td>
                   <td> {booking.client?.contactNumber || booking.contactNumber}</td>
                   <td>{booking.client?.clientAddress}</td>
+                  <td>{booking.createdAt}</td>
                   <td>
                     <button onClick={() => handleDelete(booking._id)}>
                       <MdOutlineDelete />

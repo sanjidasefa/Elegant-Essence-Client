@@ -90,7 +90,7 @@ const ChangeRole = () => {
                   <input
                     {...register("email", { required: true })}
                     type="email"
-                    className="input "
+                    className="input my-2 "
                     placeholder="Enter Decorator Email"
                     defaultValue={user.email}
                   />

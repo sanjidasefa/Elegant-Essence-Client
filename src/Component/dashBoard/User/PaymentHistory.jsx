@@ -10,7 +10,7 @@ const PaymentHistory = () => {
   const axios = useUser();
   const { data = [] ,isLoading,
     isError, } = useQuery({
-    queryKey: ["my-Percels", user.email],
+    queryKey: ["my-Projects", user.email],
     queryFn: async () => {
       const data = await axios.get(`/serviceBooking?email=${user.email}`);
       console.log(data.data);

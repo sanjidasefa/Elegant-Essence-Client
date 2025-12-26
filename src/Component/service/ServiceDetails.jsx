@@ -70,6 +70,7 @@ const ServiceDetails = () => {
     toast.success(
       "your Service is booked successfully , please check your booking list for pay "
     );
+    setModal(false)
     console.log("Inserted ID:", res.insertedId);
     refetch();
   };
@@ -136,9 +137,9 @@ const ServiceDetails = () => {
           <h1 className="text-gray-500 font-semibold flex items-center gap-2 text-xl my-2">
             <SiNamecheap /> {service.decorator.name}
           </h1>
-          <p className="text-gray-500 my-1 font-semibold flex items-center gap-2">
+          {/* <p className="text-gray-500 my-1 font-semibold flex items-center gap-2">
             <PiPhoneCallFill /> {service.decorator.number}
-          </p>
+          </p> */}
           <p className="text-gray-500 font-semibold flex items-center gap-2">
             <ImMail4 /> {service.decorator.email}
           </p>

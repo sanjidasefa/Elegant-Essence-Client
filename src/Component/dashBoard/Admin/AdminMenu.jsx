@@ -5,12 +5,13 @@ import { GrServicePlay } from "react-icons/gr";
 import { MdOutlineBookmarks } from "react-icons/md";
 import { Link } from "react-router";
 import { RiExchangeLine } from "react-icons/ri";
+import { FaEdit } from "react-icons/fa";
 
 const AdminMenu = () => {
   return (
     <div className="bg-cyan-800 flex min-h-full flex-col items-start is-drawer-close:w-60 is-drawer-open:w-60">
       <ul className="menu w-full">
-        <h1 className=" text-lg font-bold">Decorator Panel</h1>
+        <h1 className=" text-lg font-bold">Admin Panel</h1>
         <li>
           <Link to="/" className="font-semibold" data-tip="Homepage">
             <svg
@@ -54,10 +55,10 @@ const AdminMenu = () => {
           </Link>
         </li>
         <li>
-          <Link to="booking-list" className="font-semibold" data-tip="Services">
+          <Link to="All-Bookigns" className="font-semibold" data-tip="Services">
             <span className="flex gap-2">
               <MdOutlineBookmarks />
-              Bookings
+             All Bookings
             </span>
           </Link>{" "}
         </li>
@@ -66,6 +67,14 @@ const AdminMenu = () => {
             <span className="flex gap-2">
               <GrServicePlay />
               Add-Services
+            </span>
+          </Link>
+        </li>
+        <li>
+          <Link to="All-Service" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2">
+            <FaEdit />
+             Update Service
             </span>
           </Link>
         </li>

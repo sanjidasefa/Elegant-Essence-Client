@@ -6,6 +6,7 @@ import { signInData } from "../../../utilities/img";
 import { useMutation } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import add from '../../../assets/add.png'
+import toast from "react-hot-toast";
 
 const AddServices = () => {
   const { user } = useAuth();
@@ -48,6 +49,7 @@ const AddServices = () => {
         number: user?.number,
       },
     };
+    toast.loading('wait for your submission')
     console.table(serviceData);
     Swal.fire({
       title: "Are you sure?",
@@ -104,12 +106,14 @@ const AddServices = () => {
 
                 <label className="label mt-2">Photo</label>
                 <input
-                  {...register("servicePhoto")}
+                  {...register("servicePhoto" ,{ required: true })}
                   type="file"
                   className="file-input "
                   placeholder="Enter your photo"
                 />
-
+               {errors.servicePhoto?.type === "required" && (
+                  <p className="text-red-600">Enter your Service PHoto</p>
+                )}
                 <label className="label mt-2">Service Name</label>
                 <input
                   {...register("serviceName", { required: true })}

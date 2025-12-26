@@ -75,7 +75,7 @@ const Banner3 = () => {
               <p className="text-xl text-cyan-200">
                 Click Here For More Service Explore
               </p>
-              <Link>
+              <Link to='/Service'>
                 {" "}
                 <button className="btn btn-primary">Explore Services</button>
               </Link>
@@ -110,6 +110,10 @@ const Banner3 = () => {
                   to ceremonies, we ensure a seamless and stress-free decoration
                   experience.
                 </p>
+                 <Link to='/Dashboard/Decorators-List'>
+                {" "}
+                <button className="btn btn-primary">Explore Our Decorator's</button>
+              </Link>
               </div>
             </div>
           </div>

@@ -23,6 +23,12 @@ import Decorators from '../Component/dashBoard/Admin/Decorators';
 import BookingManage from '../Component/dashBoard/Admin/BookingManage';
 import ChangeRole from '../Component/dashBoard/ChangeRole';
 import ManageDecorator from '../Component/dashBoard/Admin/ManageDecorator';
+import TodaySchedule from '../Component/dashBoard/decorator/TodaySchedule';
+import EarningSchedule from '../Component/dashBoard/decorator/EarningSchedule';
+import DecoratorRoute from './DecoratorRoute';
+import AdminRoute from './AdminRoute';
+import AllBookings from '../Component/dashBoard/Admin/AllBookings';
+import ALlService from '../Component/dashBoard/Admin/ALlService';
 
 
 const router = createBrowserRouter([
@@ -89,7 +95,7 @@ const router = createBrowserRouter([
     },
     {
      path : 'My-projects' ,
-     element : <Projects></Projects>
+     element : <DecoratorRoute><Projects></Projects></DecoratorRoute>
     },
     {
      path : 'Decorators-List' ,
@@ -97,7 +103,7 @@ const router = createBrowserRouter([
     },
     {
      path : 'Manage-Bookings' ,
-     element : <BookingManage></BookingManage>
+     element : <AdminRoute><BookingManage></BookingManage></AdminRoute>
     },
     {
      path : 'handle-User-to-decorator' ,
@@ -105,7 +111,23 @@ const router = createBrowserRouter([
     },
     {
      path : 'Manage-Decorator' ,
-     element : <ManageDecorator></ManageDecorator>
+     element : <AdminRoute><ManageDecorator></ManageDecorator></AdminRoute>
+    },
+    {
+     path : 'Todays-Schedule' ,
+     element : <DecoratorRoute><TodaySchedule></TodaySchedule></DecoratorRoute>
+    },
+    {
+     path : 'Earning-Summery' ,
+     element : <DecoratorRoute><EarningSchedule></EarningSchedule></DecoratorRoute>
+    },
+    {
+     path : 'All-Bookigns' ,
+     element : <DecoratorRoute><AllBookings></AllBookings></DecoratorRoute>
+    },
+    {
+     path : 'All-Service' ,
+     element : <DecoratorRoute><ALlService></ALlService></DecoratorRoute>
     },
     ]
   },
