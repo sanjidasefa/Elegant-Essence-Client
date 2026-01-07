@@ -31,6 +31,7 @@ const ManageDecorator = () => {
   if (isError) {
     return (
       <Link to="/" className="flex justify-center mt-20">
+        <h1 className="text-2xl font-bold ">No Request Here So,</h1>
         <button className="btn">Go to Home</button>
       </Link>
     );

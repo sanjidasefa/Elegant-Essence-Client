@@ -2,7 +2,8 @@ import React from "react";
 import { GrServicePlay } from "react-icons/gr";
 import { RiCustomerServiceLine, RiExchangeLine } from "react-icons/ri";
 import { Link } from "react-router";
-
+import { MdOutlineToday } from "react-icons/md";
+import { CiMoneyCheck1 } from "react-icons/ci";
 const DecoratorMenu = () => {
   return (
     <div>
@@ -62,7 +63,7 @@ const DecoratorMenu = () => {
            <li>
           <Link to="Todays-Schedule" className="font-semibold" data-tip="Services">
             <span className="flex gap-2">
-           <RiExchangeLine />
+         <MdOutlineToday />
            Today's Schedule
             </span>
           </Link>
@@ -70,7 +71,7 @@ const DecoratorMenu = () => {
            <li>
           <Link to="Earning-Summery" className="font-semibold" data-tip="Services">
             <span className="flex gap-2">
-           <RiExchangeLine />
+          <CiMoneyCheck1 />
            Earning Summery
             </span>
           </Link>

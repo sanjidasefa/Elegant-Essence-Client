@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useParams } from "react-router";
+import { Link, useNavigate, useParams } from "react-router";
 import useUser from "../../hooks/useUser";
 import { useQuery } from "@tanstack/react-query";
 import RouteError from "../../Routes/RouteError";
@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 
 const ServiceDetails = () => {
   const { id } = useParams();
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -52,6 +53,11 @@ const ServiceDetails = () => {
   }
 
   const handleBooking = async (data) => {
+    if(!user?.email){
+      toast.error('please Login ')
+      navigate('/login')
+      return;
+    }
     const booking = {
       serviceName: service.serviceName,
       servicePrice: service.servicePrice,
@@ -93,7 +99,7 @@ const ServiceDetails = () => {
               </div>
             </div>
             <h1 className="font-bold text-3xl text-gray-500   ">
-              category {service.category}
+           {service.category}
             </h1>
             <p className="text-gray-500 font-semibold my-4">
               {service.serviceDescription}
@@ -120,7 +126,15 @@ const ServiceDetails = () => {
                 <div className="flex mt-10 justify-end">
                   <button
                     className="btn btn-neutral mt-4 shadow-2xl "
-                    onClick={() => setModal(true)}
+                    onClick={() => {
+                      if(!user?.email){
+                        navigate('/login',{
+                          state: location.pathname,
+                        })
+                        return;
+                      }
+                      setModal(true)
+                    }}
                   >
                     Book Decoration Service
                   </button>
