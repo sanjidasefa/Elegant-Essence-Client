@@ -50,7 +50,7 @@ const AdminMenu = () => {
           >
             <span className="flex gap-2">
               <BiBookmarkAltPlus />
-              Manage Bookings
+             Assign Decorators
             </span>
           </Link>
         </li>

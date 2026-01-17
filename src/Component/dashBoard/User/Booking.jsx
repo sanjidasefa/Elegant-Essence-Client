@@ -113,8 +113,8 @@ const Booking = () => {
                   <td>{booking.email}</td>
                   <td>{booking.servicePrice}</td>
                   <td>
-                    {booking.status === "paid" ? (
-                      <p>paid</p>
+                    {booking.status === "paid" || booking.status === "assigned" ? (
+                      <p>{booking.status}</p>
                     ) : (
                       <button
                         className="btn btn-sm bg-cyan-600"

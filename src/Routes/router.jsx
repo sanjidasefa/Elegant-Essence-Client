@@ -29,6 +29,7 @@ import DecoratorRoute from './DecoratorRoute';
 import AdminRoute from './AdminRoute';
 import AllBookings from '../Component/dashBoard/Admin/AllBookings';
 import ALlService from '../Component/dashBoard/Admin/ALlService';
+import Footer from '../Component/Shared/Footer';
 
 
 const router = createBrowserRouter([
@@ -143,5 +144,9 @@ const router = createBrowserRouter([
  path: '*',
  element : <RouteError></RouteError>
 },
+{
+  path : '/footer',
+  element: <Footer></Footer>
+}
 ])
 export default router;

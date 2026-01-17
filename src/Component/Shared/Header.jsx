@@ -35,7 +35,7 @@ const Header = () => {
         </li>
         <li className="flex gap-2 justify-center items-center">
           <LuContact />
-          <NavLink>Contact</NavLink>
+          <NavLink to='/footer'>Contact</NavLink>
         </li>
         <li className="flex gap-2 justify-center items-center">
           <PiMapPinAreaBold />

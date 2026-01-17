@@ -71,7 +71,6 @@ const ALlService = () => {
 
   return (
     <div>
-
         <div className='flex flex-wrap gap-10 justify-center items-center'>
               {
               data?.map(service => (

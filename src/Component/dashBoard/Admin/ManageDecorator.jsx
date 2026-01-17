@@ -55,7 +55,7 @@ const handleRoleDelete = async(id) =>{
     <div>
       <div className=" p-5 lg:p-10">
         <div className="flex justify-between">
-          <h1 className="font-bold text-3xl mb-5 ">MAnage Booking </h1>
+          <h1 className="font-bold text-3xl mb-5 ">Manage Decorator </h1>
         </div>
         <div className="overflow-x-auto ">
           <table className="table table-xs ">
@@ -82,7 +82,7 @@ const handleRoleDelete = async(id) =>{
                     <td>
                        <button
                         className="btn"
-                        onClick={() => handleRoleDelete(requst.id)}
+                        onClick={() => handleRoleDelete(requst._id)}
                       >
                         <MdOutlineDelete />
                       </button>

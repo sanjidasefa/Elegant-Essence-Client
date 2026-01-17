@@ -86,7 +86,7 @@ const ServiceDetails = () => {
       <div className="bg-cyan-100 p-10 rounded-2xl shadow-2xl">
         <div className="flex flex-col lg:flex-row gap-10">
           <div>
-            <img src={service.servicePhoto} alt="" className="rounded-2xl " />
+            <img src={service.servicePhoto} alt="" className="rounded-2xl h-70" />
           </div>
           <div>
             <div className="lg:flex justify-between  items-center">
