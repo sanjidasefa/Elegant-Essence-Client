@@ -54,8 +54,11 @@ const Home = () => {
        </div>
       
       <Banner2></Banner2>
-     <div className='p-20 bg-cyan-50 text-cyan-800'>
+     <div className='p-20 rounded-2xl bg-cyan-50 text-cyan-800'>
       <Decorators></Decorators>
+  <div className='flex justify-end my-6'>
+             <Link to='/Decorators-List' className='btn bg-cyan-700 '>Explopre More ...</Link>
+         </div>
      </div>
       </div>
   );

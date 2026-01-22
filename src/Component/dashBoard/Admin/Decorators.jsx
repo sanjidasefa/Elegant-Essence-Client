@@ -33,10 +33,9 @@ const Decorators = () => {
   }
 
   return (
-    <div className="lg:px-20 ">
- <h1 className="font-bold text-3xl mb-5 ">Decorator List</h1>
+    <div className="bg-white lg:p-20 p-10">
+ <h1 className="font-bold text-3xl mb-5 text-cyan-900">Decorator List</h1>
 <div className="grid grid-cols-2 gap-10">
-  
       {data.map((decorator) => {
         return (
           <div key={decorator._id}>

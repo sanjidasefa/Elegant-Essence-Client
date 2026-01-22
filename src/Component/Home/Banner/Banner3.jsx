@@ -28,7 +28,7 @@ const Banner3 = () => {
               <img
                 src={celebrate}
                 alt="service"
-                className="w-full h-[80vh] object-cover"
+                className="w-full h-[70vh] object-cover"
               />
             </figure>
             <div className="card-body lg:my-50 my-20 flex justify-center  items-center">
@@ -61,7 +61,7 @@ const Banner3 = () => {
               <img
                 src={service}
                 alt="service"
-                className="w-full h-[80vh] object-cover"
+                className="w-full h-[70vh] object-cover"
               />
             </figure>
             <div className="card-body my-50 flex justify-center  items-center">
@@ -88,7 +88,7 @@ const Banner3 = () => {
               <img
                 src={studio}
                 alt="studio"
-                className="w-full h-[80vh] object-cover"
+                className="w-full h-[70vh] object-cover"
               />
             </figure>
             <div className="card-body my-50 ">
@@ -124,7 +124,7 @@ const Banner3 = () => {
               <img
                 src={about}
                 alt="intorior design"
-                className="w-full h-[80vh] object-cover"
+                className="w-full h-[70vh] object-cover"
               />
             </figure>
             <div className="card-body text-center lg:mb-40 p-20">
@@ -160,7 +160,7 @@ const Banner3 = () => {
               <img
                 src={feature}
                 alt=""
-                className="w-full h-[80vh] object-cover"
+                className="w-full h-[70vh] object-cover"
               />
             </figure>
             <div className="card-body lg:my-20 flex justify-center  items-center">
@@ -197,7 +197,7 @@ const Banner3 = () => {
               <img
                 src={intorior}
                 alt="intorior design"
-                className="w-full h-[80vh] object-cover"
+                className="w-full h-[70vh] object-cover"
               />
             </figure>
             <div className="card-body my-50 flex justify-center  items-center">

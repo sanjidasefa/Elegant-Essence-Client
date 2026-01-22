@@ -4,6 +4,7 @@ import { RiCustomerServiceLine, RiExchangeLine } from "react-icons/ri";
 import { Link } from "react-router";
 import { MdOutlineToday } from "react-icons/md";
 import { CiMoneyCheck1 } from "react-icons/ci";
+import { CiEdit } from "react-icons/ci";
 const DecoratorMenu = () => {
   return (
     <div>
@@ -69,13 +70,22 @@ const DecoratorMenu = () => {
           </Link>
         </li>
            <li>
-          <Link to="Earning-Summery" className="font-semibold" data-tip="Services">
+          <Link to="Update-Service-Status" className="font-semibold" data-tip="Services">
             <span className="flex gap-2">
-          <CiMoneyCheck1 />
-           Earning Summery
+         <CiEdit></CiEdit>
+           Update Service Status
             </span>
           </Link>
         </li>
+           <li>
+          <Link to="Earning-Summary" className="font-semibold" data-tip="Services">
+            <span className="flex gap-2"> 
+          <CiMoneyCheck1 />
+           Earning Summary
+            </span>
+          </Link>
+        </li>
+          
         </ul>
       </div>
     </div>

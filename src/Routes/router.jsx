@@ -24,12 +24,13 @@ import BookingManage from '../Component/dashBoard/Admin/BookingManage';
 import ChangeRole from '../Component/dashBoard/ChangeRole';
 import ManageDecorator from '../Component/dashBoard/Admin/ManageDecorator';
 import TodaySchedule from '../Component/dashBoard/decorator/TodaySchedule';
-import EarningSchedule from '../Component/dashBoard/decorator/EarningSchedule';
 import DecoratorRoute from './DecoratorRoute';
 import AdminRoute from './AdminRoute';
 import AllBookings from '../Component/dashBoard/Admin/AllBookings';
 import ALlService from '../Component/dashBoard/Admin/ALlService';
 import Footer from '../Component/Shared/Footer';
+import UpdatStatus from '../Component/dashBoard/decorator/UpdatStatus';
+import EarningsSummary from '../Component/dashBoard/decorator/EarningsSummary';
 
 
 const router = createBrowserRouter([
@@ -119,16 +120,20 @@ const router = createBrowserRouter([
      element : <DecoratorRoute><TodaySchedule></TodaySchedule></DecoratorRoute>
     },
     {
-     path : 'Earning-Summery' ,
-     element : <DecoratorRoute><EarningSchedule></EarningSchedule></DecoratorRoute>
-    },
-    {
      path : 'All-Bookigns' ,
      element : <DecoratorRoute><AllBookings></AllBookings></DecoratorRoute>
     },
     {
      path : 'All-Service' ,
      element : <DecoratorRoute><ALlService></ALlService></DecoratorRoute>
+    },
+    {
+     path : 'Update-Service-Status' ,
+     element : <DecoratorRoute><UpdatStatus></UpdatStatus></DecoratorRoute>
+    },
+    {
+     path : 'Earning-Summary' ,
+     element : <DecoratorRoute><EarningsSummary></EarningsSummary></DecoratorRoute>
     },
     ]
   },
@@ -147,6 +152,6 @@ const router = createBrowserRouter([
 {
   path : '/footer',
   element: <Footer></Footer>
-}
+},
 ])
 export default router;

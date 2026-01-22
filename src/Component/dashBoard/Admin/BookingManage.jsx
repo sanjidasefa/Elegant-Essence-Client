@@ -10,7 +10,6 @@ const BookingManage = () => {
   const { user } = useAuth();
   const axios = useUser();
 
-  // Fetch all bookings
   const {
     data: bookings = [],
     isLoading,
@@ -24,7 +23,6 @@ const BookingManage = () => {
     },
   });
 
-  // Fetch all decorators
   const { data: decorators = [] } = useQuery({
     queryKey: ["decorators"],
     queryFn: async () => {
@@ -36,10 +34,9 @@ const BookingManage = () => {
   if (isLoading){
      return <RouteLoder />
     };
-  if (isError) {
+ if (isError) {
     return (
       <Link to="/" className="flex justify-center mt-20">
-        <h1 className="text-2xl font-bold ">No Request Here So,</h1>
         <button className="btn">Go to Home</button>
       </Link>
     );
@@ -47,7 +44,6 @@ const BookingManage = () => {
 
   const handleAssignDecorator = async (bookingId, value) => {
     if (!value) return;
-
     try {
       if (value === "decline") {
         await axios.patch(`/decline-booking/${bookingId}`, {

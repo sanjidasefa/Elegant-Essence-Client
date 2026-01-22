@@ -8,7 +8,7 @@ const Banner = () => {
       <p className='text-cyan-500 text-center md:text-left my-3 md:text-xl'>In the best interior design and construction industry in Bangladesh.  
       Join us as we continue to transform spaces and bring dreams to life with creativity, quality, and dedication.</p>
       </div>
-      <img src={img18} alt="" className='md:w-200'/>
+      <img src={img18} alt="" className='md:w-150'/>
     </div>
   );
 };
