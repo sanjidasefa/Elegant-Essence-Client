@@ -1,17 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navber from '../Component/Shared/Navber';
 import { Outlet } from 'react-router';
 import Footer from '../Component/Shared/Footer';
 import Header from '../Component/Shared/Header';
 
 const HomeLayout = () => {
+   useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+  }, []);
+
   return (
     <>
       <Navber></Navber>
-     <div className='hidden md:block'>
+     
        <Header></Header>
-     </div>
+   
       <Outlet></Outlet>
+      
       <Footer></Footer>
     </>
   );

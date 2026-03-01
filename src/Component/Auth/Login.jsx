@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 const Login = () => {
   const axios = useUser()
-     const {register, handleSubmit , formState:{errors}} = useForm()
+     const {register, handleSubmit , formState:{errors}, setValue} = useForm()
  const { signIn , google } = useAuth()
 const navigate = useNavigate();
 
@@ -105,6 +105,10 @@ const onSubmitLog =async (data) => {
                   <a className="link link-hover">Forgot password?</a>
                 </div>
                 <button className="btn btn-neutral mt-4">Login</button>
+                <button onClick={() => {
+                  setValue("email", "demo@gmail.com");
+                  setValue("password", "Demo1234");
+                }} type="button" className="btn btn-outline mt-2">Demo Login</button>
                 <h1>if you dont have an account , please <Link to='/SignUp' className="text-blue-400 underline">Sign Up</Link></h1>
               </fieldset>
               </form>

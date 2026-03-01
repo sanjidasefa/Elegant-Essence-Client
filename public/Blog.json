@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Top 5 Wedding Decoration Trends",
+    "author": "Admin",
+    "date": "2026-03-01",
+    "category": "Wedding Decor",
+    "excerpt": "Explore the most popular wedding decoration trends that can transform any venue into a beautiful and memorable celebration."
+  },
+  {
+    "id": 2,
+    "title": "Creative Birthday Decoration Ideas",
+    "author": "Admin",
+    "date": "2026-02-22",
+    "category": "Birthday Party",
+    "excerpt": "Discover creative birthday decoration ideas that bring color, joy, and excitement to every celebration."
+  },
+  {
+    "id": 3,
+    "title": "How to Plan a Perfect Engagement Setup",
+    "author": "Admin",
+    "date": "2026-02-15",
+    "category": "Engagement",
+    "excerpt": "Planning an engagement event? Learn simple decoration techniques that make your event elegant and romantic."
+  },
+  {
+    "id": 4,
+    "title": "Budget Friendly Home Decoration Tips",
+    "author": "Admin",
+    "date": "2026-02-10",
+    "category": "Home Decor",
+    "excerpt": "Decorating your home doesn't have to be expensive. Here are budget friendly decoration ideas that look stunning."
+  },
+  {
+    "id": 5,
+    "title": "Outdoor Event Decoration Guide",
+    "author": "Admin",
+    "date": "2026-02-01",
+    "category": "Outdoor Events",
+    "excerpt": "Outdoor decorations can create unforgettable moments. Learn how to design a beautiful outdoor event setup."
+  },
+  {
+    "id": 6,
+    "title": "Modern Lighting Ideas for Events",
+    "author": "Admin",
+    "date": "2026-01-25",
+    "category": "Lighting Decor",
+    "excerpt": "Lighting plays a big role in event decoration. Discover modern lighting ideas that enhance the atmosphere."
+  }
+]

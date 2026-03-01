@@ -10,9 +10,9 @@ import notification from '../../../assets/category/notification.gif'
 
 const Banner2 = () => {
   return (
-    <div className='bg-white p-20'>
-      <h1 className='text-3xl mb-10 md:text-4xl text-cyan-800  text-center  font-bold'>Decoration Service Booking & Management System</h1>
-      <p className='text-cyan-600 mb-10 font-semibold text-center'>A complete digital platform that helps customers effortlessly explore decoration packages, book appointments, choose service modes, and track their entire service journey in real-time.</p>
+    <div className='bg-white py-10 px-4 md:p-20'>
+      <h1 className='text-3xl mb-10 md:text-5xl text-cyan-800  text-center  font-bold'>Decoration Service Booking & Management System</h1>
+      <p className='text-cyan-600 mb-10 font-semibold text-center text-lg'>A complete digital platform that helps customers effortlessly explore decoration packages, book appointments, choose service modes, and track their entire service journey in real-time.</p>
      <div className='grid grid-cols-1 md:grid-cols-4 gap-10'>
        <div className='bg-pink-300 shadow-2xl  p-10 rounded-2xl flex flex-col items-center'>
         <img src={pakage} alt=""  className='w-1/3'/>

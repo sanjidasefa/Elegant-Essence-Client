@@ -1,17 +1,31 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 import Logo from "../Extra/Logo";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import Header from "./Header";
 import { useAuth } from "../../hooks/useAuth";
 import profile from '../../assets/profile.png'
+import { BsSunFill } from "react-icons/bs";
+import { GoMoon } from "react-icons/go";
 const Navber = () => {
   const { user } = useAuth();
+  
+   const handleThemes = (checked) => {
+  const html = document.documentElement;
+  if (checked) {
+    html.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
+  } else {
+    html.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
+  }
+};
+
   return (
     <>
-      <div className="navbar bg-white shadow-xl md:px-20 md:py-5">
+      <div className="navbar bg-white shadow-xl px-12 py-4 md:px-20 md:py-5">
         <div className="navbar-start">
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -35,28 +49,36 @@ const Navber = () => {
             >
               <Header></Header>
             </ul>
-          </div>
-          <Link to="/">
+          </div> */}
+          <Link to='/'><h1 className=''>
             <Logo></Logo>
-          </Link>
+          </h1></Link>
         </div>
         <div className="navbar-end">
+
+       <label className="toggle mr-2 text-base-content ">
+  <input  type="checkbox"    onChange={(e)=> handleThemes(e.target.checked)}  defaultChecked={localStorage.getItem('theme') === "dark"}/>
+  <svg aria-label="enabled" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+   <BsSunFill />
+  </svg>
+  <GoMoon />
+</label>
           {
-            !user ? <Link to='/login' className="btn ">Login</Link> : ''
+            !user ? <NavLink to='/login' className="btn ">Login</NavLink> : ''
           }
           {user ? (
-            <Link to="/My-Profile" className="text-cyan-500">
+            <NavLink to="/My-Profile" className="text-cyan-500">
               {" "}
               <img
                 src={user?.photoURL || profile}
                 className="rounded-full w-10 mr-3 h-10"
                 alt=""
               />
-            </Link>
+            </NavLink>
           ) : (
-            <Link to="/" className="text-cyan-500">
+            <NavLink to="/" className="text-cyan-500">
               <IoPersonCircleOutline className="w-20 h-10"></IoPersonCircleOutline>
-            </Link>
+            </NavLink>
           )}
         </div>
       </div>

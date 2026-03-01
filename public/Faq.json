@@ -1,0 +1,27 @@
+ [
+  {
+    "id": 1,
+    "question": "Do you offer home delivery?",
+    "answer": "Yes, we provide home delivery across the country."
+  },
+  {
+    "id": 2,
+    "question": "What is the return policy?",
+    "answer": "You can return products within 7 days if they are unused."
+  },
+  {
+    "id": 3,
+    "question": "Do you provide installation service?",
+    "answer": "Yes, our team can help install furniture at your home."
+  },
+  {
+    "id": 4,
+    "question": "How can I contact customer support?",
+    "answer": "You can contact us via email or our customer service hotline."
+  },
+  {
+    "id": 5,
+    "question": "Do you offer custom furniture?",
+    "answer": "Yes, we provide custom furniture based on your design and requirements."
+  }
+]

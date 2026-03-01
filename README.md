@@ -2,7 +2,7 @@ Project name : Elegant-Essence
 
 Purpose : The purpose of Elegant-Essence is to provide a seamless, modern solution for managing decoration services. It allows customers to explore decoration packages, book appointments, choose service modes, make secure payments, and track the status of their services, while helping the company efficiently manage bookings and staff schedules.
 
-Live URL : 
+Live URL : https://taupe-sprite-2bc074.netlify.app/
 
 Key features :
 1. Browse and explore different decoration packages.

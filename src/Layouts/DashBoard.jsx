@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet } from "react-router";
+import { Link, Outlet, useLocation } from "react-router";
 import { TfiAlignLeft } from "react-icons/tfi";
 import Logo from "../Component/Extra/Logo";
 import { GrServicePlay } from "react-icons/gr";
@@ -14,12 +14,15 @@ import UserMenu from "../Component/dashBoard/User/UserMenu";
 import DecoratorMenu from "../Component/dashBoard/decorator/DecoratorMenu";
 import AdminMenu from "../Component/dashBoard/Admin/AdminMenu";
 import RouteLoder from "../Routes/RouteLoder";
+import DecoratorChart from "../Component/dashBoard/decorator/DecoratorChart";
 
 const DashBoard = () => {
   const [role, roleLoading] = useRoles();
-   if (roleLoading) {
-      return <RouteLoder></RouteLoder>;
-    }
+  const location = useLocation();
+  const dashboardHome = location.pathname === "/Dashboard";
+  if (roleLoading) {
+    return <RouteLoder></RouteLoder>;
+  }
   return (
     <>
       <div className="drawer lg:drawer-open">
@@ -35,8 +38,14 @@ const DashBoard = () => {
             </label>
             <Logo></Logo>
           </nav>
-
-          <div className="p-15">
+          <div className="p-10">
+            {dashboardHome && (
+              <div className="">
+                <DecoratorChart></DecoratorChart>
+              </div>
+            )}
+          </div>
+          <div className="p-16">
             <Outlet></Outlet>
           </div>
         </div>
@@ -47,21 +56,14 @@ const DashBoard = () => {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <div className="bg-cyan-800 flex min-h-full flex-col items-start is-drawer-close:w-64 is-drawer-open:w-64">
+          <div className="bg-white flex min-h-full flex-col items-start is-drawer-close:w-64 is-drawer-open:w-64">
             <ul className="menu w-full">
-              <h1 className=" text-lg font-bold">MENU</h1>
-             {
-              role === 'client' && <UserMenu></UserMenu>
-             }
-             {
-              role === 'decorator' && <DecoratorMenu></DecoratorMenu>
-             }
-             {
-              role === 'admin' && <AdminMenu></AdminMenu>
-             }          
-             
+              <h1 className=" text-lg font-bold text-cyan-800">MENU</h1>
+              {role === "client" && <UserMenu></UserMenu>}
+              {role === "decorator" && <DecoratorMenu></DecoratorMenu>}
+              {role === "admin" && <AdminMenu></AdminMenu>}
             </ul>
-            <ul className="menu w-full ">
+            <ul className="text-cyan-800 menu w-full ">
               <h1 className=" text-lg font-bold">GENERAL</h1>
               <li>
                 <Link to="/My-Profile" className="" data-tip="">

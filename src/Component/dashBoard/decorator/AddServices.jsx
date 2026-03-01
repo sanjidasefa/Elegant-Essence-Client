@@ -14,7 +14,7 @@ const AddServices = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors },reset 
   } = useForm();
 
   const { mutateAsync } = useMutation({
@@ -23,6 +23,7 @@ const AddServices = () => {
   });
 
   const onSubmitSign = async (data) => {
+    toast.loading('please wait for a moment', {autoClose: 2000 } )
     const {
       serviceName,
       servicePrice,
@@ -49,8 +50,7 @@ const AddServices = () => {
         number: user?.number,
       },
     };
-    toast.loading('wait for your submission')
-    console.table(serviceData);
+    // console.table(serviceData);
     Swal.fire({
       title: "Are you sure?",
       text: `Your service added`,
@@ -66,11 +66,12 @@ const AddServices = () => {
         });
         Swal.fire({
           title: "Approved",
-          text: "your selected percel send.",
+          text: "your Service Added.",
           icon: "success",
         });
       }
     });
+  reset()
   };
 
   return (

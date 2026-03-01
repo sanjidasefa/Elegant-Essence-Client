@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Tech Nova",
+    "level": "Platinum Sponsor",
+    "industry": "Technology"
+  },
+  {
+    "id": 2,
+    "name": "Green Leaf Energy",
+    "level": "Gold Sponsor",
+    "industry": "Renewable Energy"
+  },
+  {
+    "id": 3,
+    "name": "Bright Media",
+    "level": "Media Sponsor",
+    "industry": "Media & Broadcasting"
+  },
+  {
+    "id": 4,
+    "name": "Urban Foods",
+    "level": "Food Sponsor",
+    "industry": "Food & Catering"
+  },
+  {
+    "id": 5,
+    "name": "SkyNet Communications",
+    "level": "Connectivity Sponsor",
+    "industry": "Telecommunications"
+  },
+  {
+    "id": 6,
+    "name": "Secure-Shield",
+    "level": "Security Sponsor",
+    "industry": "Security Services"
+  },
+  {
+    "id": 7,
+    "name": "Eco-World",
+    "level": "Sustainability Partner",
+    "industry": "Environmental Solutions"
+  },
+  {
+    "id": 8,
+    "name": "Next-Gen Systems ",
+    "level": "Technology Partner",
+    "industry": "Software & IT"
+  }
+]

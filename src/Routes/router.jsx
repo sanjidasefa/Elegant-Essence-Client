@@ -31,6 +31,11 @@ import ALlService from '../Component/dashBoard/Admin/ALlService';
 import Footer from '../Component/Shared/Footer';
 import UpdatStatus from '../Component/dashBoard/decorator/UpdatStatus';
 import EarningsSummary from '../Component/dashBoard/decorator/EarningsSummary';
+import Banner2 from '../Component/Home/Banner/Banner2';
+import FAQ from '../Component/About/FAQ';
+import Condition from '../Component/About/Condition';
+import CompanyOverview from '../Component/Home/Banner/CompanyOverview';
+import Blog from '../Component/Home/Banner/Blog';
 
 
 const router = createBrowserRouter([
@@ -42,7 +47,7 @@ const router = createBrowserRouter([
       {
         index : true,
         element : <Home></Home>,
-         loader: ()=> fetch('https://elegant-essence-server-eight.vercel.app/Service').then(res=> res.json())
+        loader: ()=> fetch('https://elegant-essence-server-eight.vercel.app/Service').then(res=> res.json())
       },
       {
         path: '/My-Profile' ,
@@ -56,6 +61,26 @@ const router = createBrowserRouter([
       {
        path : '/about' , 
        element : <About></About>
+      },
+      {
+       path : '/Fetures' , 
+       element :<Banner2></Banner2>
+      },
+      {
+       path : '/Company-Overview' , 
+       element :<CompanyOverview></CompanyOverview>
+      },
+      {
+       path : '/Blog-Preview' , 
+       element :<Blog></Blog>
+      },
+      {
+       path : '/Faq' , 
+       element :<FAQ></FAQ>
+      },
+      {
+       path : '/Terms&Condiotions' , 
+       element :<Condition></Condition>
       },
       {
         path : '/Service/:id',

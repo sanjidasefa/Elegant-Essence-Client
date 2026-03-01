@@ -8,7 +8,7 @@ import { CiEdit } from "react-icons/ci";
 const DecoratorMenu = () => {
   return (
     <div>
-      <div className="bg-cyan-800 flex min-h-full flex-col items-start is-drawer-close:w-60 is-drawer-open:w-60">
+      <div className="text-cyan-800 bg-white flex min-h-full flex-col items-start is-drawer-close:w-60 is-drawer-open:w-60">
         <ul className="menu w-full">
           <h1 className=" text-lg font-bold">Decorator Panel</h1>
           <li>
