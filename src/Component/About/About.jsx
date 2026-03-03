@@ -1,6 +1,8 @@
 import React from "react";
 import Banner2 from "../Home/Banner/Banner2";
 import CompanyOverview from "../Home/Banner/CompanyOverview";
+import Privacy from "./Privecy";
+import Condition from "./Condition";
 
 const About = () => {
   return (
@@ -15,6 +17,8 @@ const About = () => {
 
    <CompanyOverview></CompanyOverview>
   <Banner2></Banner2>
+  <Privacy></Privacy>
+  <Condition></Condition>
   </div>
 </div>
 

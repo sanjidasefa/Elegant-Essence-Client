@@ -21,12 +21,6 @@ const useUser = () => {
       },
       (err) => {
         console.log(err);
-        // const statusCode = err.status;
-        // if (statusCode === 401 || statusCode === 403) {
-        //   logOut().then(() => {
-        //     navigate("/login");
-        //   });
-        // }
         return Promise.reject(err);
       }
     );

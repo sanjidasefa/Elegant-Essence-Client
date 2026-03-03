@@ -1,92 +1,85 @@
 import React from "react";
 import Logo from "../Extra/Logo";
-import { Link, NavLink } from "react-router";
+import { Link } from "react-router";
+import { FaFacebookF, FaTwitter, FaYoutube, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Footer = () => {
+  const linkStyle = "link link-hover text-gray-700 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors duration-200 flex items-center gap-3";
   return (
     <div>
-      <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10">
+      <footer className="footer sm:footer-horizontal bg-slate-100 dark:bg-[#1a1f24] text-base-content p-10 border-t border-gray-200 dark:border-gray-800">
         <nav>
-          <h6 className="footer-title">Contact-Info</h6>
-          <a className="link link-hover">Phone : 017****** </a>
-          <a className="link link-hover">Email : elegantEssence@gmail.com </a>
-          <a className="link link-hover">Address : Mirpur-1, Dhaka</a>
-        </nav>
-        <nav>
-          <h6 className="footer-title">Company</h6>
-          <Link to="/about" className="link link-hover">
-            About us
-          </Link>
-          <Link to="/Fetures" className="link link-hover">
-            Features
-          </Link>
-          <Link to="/Covarage-Area-Map" className="link link-hover">
-            {" "}
-            Area
-          </Link>
-        </nav>
-        <nav>
-          <h6 className="footer-title">Legal</h6>
-          <Link to="/Terms&Condiotions" className="link link-hover">
-            Terms of Conditions
-          </Link>
-          <a className="link link-hover">Privacy policy</a>
-          <Link to="/Faq" className="link link-hover">
-            FAQ
-          </Link>
-        </nav>
-        <nav>
-          <h6 className="footer-title">Working Time</h6>
-          <a className="link link-hover">Sunday-Thursday : 9:00 PM -6:00 PM</a>
-          <a className="link link-hover">Saturday: 10:00 AM - 5:00PM</a>
-          <a className="link link-hover">Friday: off day</a>
-        </nav>
-      </footer>
-      <footer className=" bg-base-200 text-base-content border-base-300 border-t px-10 py-4">
-        <aside className="flex justify-center">
-          <Logo></Logo>
-        </aside>
-        <nav className="">
-          <div className="flex gap-5 my-3 justify-center">
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-              </svg>
+          <h6 className="footer-title text-cyan-700 dark:text-cyan-400 opacity-100 font-bold mb-4 tracking-widest">Contact Info</h6>
+          <div className="space-y-4">
+            <a href="tel:01700000000" className={linkStyle}>
+              <FaPhoneAlt className="text-cyan-600 dark:text-cyan-400" /> 
+              <span className="font-medium">01712-345678</span>
             </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-              </svg>
+            <a href="mailto:elegantEssence@gmail.com" className={linkStyle}>
+              <FaEnvelope className="text-cyan-600 dark:text-cyan-400" /> 
+              <span className="font-medium">elegantEssence@gmail.com</span>
             </a>
-            <a>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                className="fill-current"
-              >
-                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-              </svg>
-            </a>
+            <div className="flex items-start gap-3 text-gray-700 dark:text-gray-200">
+              <FaMapMarkerAlt className="text-cyan-600 dark:text-cyan-400 mt-1" /> 
+              <span className="font-medium">Mirpur-1, Dhaka, Bangladesh</span>
+            </div>
           </div>
         </nav>
-        <p className="text-center text-sm mt-10">
-          Copyright © {new Date().getFullYear()} - All right reserved by ACME
-          Industries Ltd
-        </p>
+        <nav>
+          <h6 className="footer-title text-cyan-700 dark:text-cyan-400 opacity-100 font-bold mb-4 tracking-widest">Company</h6>
+          <div className="flex flex-col space-y-3">
+            <Link to="/about" className={linkStyle}>About Us</Link>
+            <Link to="/Fetures" className={linkStyle}>Features</Link>
+            <Link to="/Covarage-Area-Map" className={linkStyle}>Coverage Area</Link>
+          </div>
+        </nav>
+
+        <nav>
+          <h6 className="footer-title text-cyan-700 dark:text-cyan-400 opacity-100 font-bold mb-4 tracking-widest">Legal</h6>
+          <div className="flex flex-col space-y-3">
+            <Link to="/Terms&Condiotions" className={linkStyle}>Terms & Conditions</Link>
+            <Link to="/Privacy" className={linkStyle}>Privacy Policy</Link>
+            <Link to="/Faq" className={linkStyle}>FAQ</Link>
+          </div>
+        </nav>
+
+        <nav>
+          <h6 className="footer-title text-cyan-700 dark:text-cyan-400 opacity-100 font-bold mb-4 tracking-widest">Working Hours</h6>
+          <div className="space-y-3 text-gray-800 dark:text-gray-100 font-medium">
+            <p className="flex justify-between w-full border-b border-gray-200 dark:border-gray-700 pb-1 gap-4">
+              <span>Sun - Thu:</span> 
+              <span className="text-cyan-700 dark:text-cyan-400">9AM - 6PM</span>
+            </p>
+            <p className="flex justify-between w-full border-b border-gray-200 dark:border-gray-700 pb-1 gap-4">
+              <span>Saturday:</span> 
+              <span>10AM - 5PM</span>
+            </p>
+            <p className="flex justify-between w-full text-red-600 dark:text-red-400 gap-4">
+              <span>Friday:</span> 
+              <span className="uppercase font-bold">Closed</span>
+            </p>
+          </div>
+        </nav>
+      </footer>
+
+      <footer className="footer footer-center bg-slate-200 dark:bg-[#111518] text-gray-700 dark:text-gray-400 py-8 px-10 border-t border-gray-300 dark:border-gray-800">
+        <aside>
+          <div className="mb-4 brightness-110">
+            <Logo />
+          </div>
+          <p className="max-w-md italic opacity-80">
+            "Your satisfaction is our priority. Providing quality services since 2024."
+          </p>
+          
+          <div className="flex gap-8 mt-6">
+            <a className="text-2xl hover:text-[#1877F2] hover:-translate-y-1 transition-all duration-300 cursor-pointer"><FaFacebookF /></a>
+            <a className="text-2xl hover:text-[#1DA1F2] hover:-translate-y-1 transition-all duration-300 cursor-pointer"><FaTwitter /></a>
+            <a className="text-2xl hover:text-[#FF0000] hover:-translate-y-1 transition-all duration-300 cursor-pointer"><FaYoutube /></a>
+          </div>
+        </aside>
+        <div className="mt-6 text-xs font-semibold uppercase tracking-wider opacity-60">
+          Copyright © {new Date().getFullYear()} - All rights reserved by Elegant Essence
+        </div>
       </footer>
     </div>
   );

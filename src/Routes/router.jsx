@@ -36,6 +36,7 @@ import FAQ from '../Component/About/FAQ';
 import Condition from '../Component/About/Condition';
 import CompanyOverview from '../Component/Home/Banner/CompanyOverview';
 import Blog from '../Component/Home/Banner/Blog';
+import DashboardHome from '../Component/dashBoard/DashboardHome/DashboardHome';
 
 
 const router = createBrowserRouter([
@@ -83,6 +84,10 @@ const router = createBrowserRouter([
        element :<Condition></Condition>
       },
       {
+       path : '/Privacy' , 
+       element :<Condition></Condition>
+      },
+      {
         path : '/Service/:id',
         element: <ServiceDetails></ServiceDetails>,
       },
@@ -101,6 +106,10 @@ const router = createBrowserRouter([
     path : 'Dashboard' , 
     element : <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children : [
+      {
+        index: true,
+        element : <DashboardHome></DashboardHome>
+      },
     { path: 'Add-Services' ,
       element: <AddServices></AddServices>
     },

@@ -23,7 +23,7 @@ const AllBookings = () => {
   
     if (isError) {
       return (
-        <Link to="/" className="flex justify-center mt-20">
+        <Link to="/" className="flex justify-center mt-10">
           <p>booking not found</p>
           <button className="btn">Go to Home</button>
         </Link>
